@@ -1,1 +1,101 @@
+body {
+    background-color: rgb(21, 21, 21);
+    color: white; /* Ensures text is visible */
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+    height: 100vh /* Makes sure it covers the full viewport */
+}
+
+.container{
+    position: fixed;
+    left: 25px;
+    top: 0;
+    width: 80px; /* Adjust width as needed */
+    height: 100vh;
+    background-color: #414141; /* Dark background */
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Space between items */
+}
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #aaa; /* Light gray text */
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    font-family: arial;
+
+}
+.item3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #aaa; /* Light gray text */
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    font-family: Arial;
+    text-decoration: underline;
+    margin-right: 150px;
+    margin-top: 60px;
+    cursor: pointer;
+}
+
+
+.container2 {
+    position: fixed;
+    right:25px;
+    top:60px;
+    display: flex;  
+    flex-direction: column;  /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center;  /* Center items horizontally */
+    background-color: #222;  /* Dark background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 450px;  /* Adjust width */
+    height: 250px; /* Adjust height */
+    margin: 0px;  /* Space from other elements */
+}
+.header{
+    font-size: 24px;  /* Make text larger */
+    font-weight: normal;  /* Make it bold */
+    text-transform: uppercase;  /* Make it all caps if needed */
+    display: inline-block;  /* Prevents unwanted effects from scaling */
+    letter-spacing: 3px;
+    position: fixed;
+    right:355px
+}
+.buttons {
+    background-color: #191818;
+    padding: 20px;
+    border-radius: 10px;
+    color:white ;
+    border:none;    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    
+
+
+    
+}
+
+.buttons:hover{
+    background-color: white;
+    color: black;
+
+}
+
 

@@ -5,6 +5,9 @@ body {
     padding: 0; /* Removes default padding */
     height: 100vh /* Makes sure it covers the full viewport */
 }
+* {
+    font-family: Calibri, sans-serif;
+}
 
 .container{
     position: fixed;
@@ -29,21 +32,21 @@ body {
     color: #aaa; /* Light gray text */
     font-size: 14px;
     transition: 0.3s ease-in-out;
-    font-family: arial;
 
 }
-.item3 {
+.own-playlists{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
+    gap: 8px;
     color: #aaa; /* Light gray text */
     font-size: 14px;
     transition: 0.3s ease-in-out;
-    font-family: Arial;
     text-decoration: underline;
-    margin-right: 150px;
-    margin-top: 60px;
+    position: fixed;
+    top:285px;
+    right:270px;
     cursor: pointer;
 }
 
@@ -53,14 +56,14 @@ body {
     right:25px;
     top:60px;
     display: flex;  
-    flex-direction: column;  /* Stack items vertically */
+    flex-direction: row;  /* Stack items vertically */
     justify-content: center; /* Center items vertically */
     align-items: center;  /* Center items horizontally */
     background-color: #222;  /* Dark background */
     color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 450px;  /* Adjust width */
+    width: 480px;  /* Adjust width */
     height: 250px; /* Adjust height */
     margin: 0px;  /* Space from other elements */
 }
@@ -71,31 +74,119 @@ body {
     display: inline-block;  /* Prevents unwanted effects from scaling */
     letter-spacing: 3px;
     position: fixed;
-    right:355px
+    right:385px
 }
-.buttons {
+.last-played-button {
     background-color: #191818;
-    padding: 20px;
-    border-radius: 10px;
+    text-transform: uppercase;
     color:white ;
     border:none;    
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: right;
+    padding: 10px;
+    gap:20px;   
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: 0.3s;
+    position: fixed;
+    right:377px;
+    top: 80px;
+    height: 170px;
+    width:150px;
+}
     
-
-
-    
+.shared-button {
+    background-color: #191818;
+    text-transform: uppercase;
+    color:white ;
+    border:none;    
+    align-items: center;
+    padding: 10px;
+    gap:20px;   
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    position: fixed;
+    right: 209px;
+    top: 80px;
+    height: 170px;
+    width:150px;
+}
+.watch-later-button{
+    background-color: #191818;
+    text-transform: uppercase;
+    color:white ;
+    border:none;    
+    align-items: center;
+    padding: 10px;
+    gap:20px;   
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    position: fixed;
+    right: 41px;
+    top: 80px;
+    height: 170px;
+    width:150px;
 }
 
-.buttons:hover{
-    background-color: white;
-    color: black;
 
+
+
+.container3 {
+    position: fixed;
+    right:25px;
+    top: 430px;
+    display: flex;  
+    flex-direction: column;  /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center;  /* Center items horizontally */
+    background-color: #222;  /* Dark background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 480px;  /* Adjust width */
+    height: 300px; /* Adjust height */
+    margin: 0px;  /* Space from other elements */
+}
+
+
+.playlist-icon{
+    width: 40px;
+    height: 40px;
+    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
+    opacity: 0.7; /* Adjust transparency */
+    
+}
+.playlist-icon-right{
+    width: 100px;
+    height: 100px;
+    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
+    opacity: 0.7; /* Adjust transparency */
+    
+}
+.playlist-icon-right-middle{
+    width: 80px;
+    height: 80px;
+    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
+    opacity: 0.7; /* Adjust transparency */
+    margin-bottom: 19px;
+}
+
+.playlist-icon-right-later{
+    width: 80px;
+    height: 80px;
+    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
+    opacity: 0.7; /* Adjust transparency */
+    margin-bottom: 19px;
 }
 
 

@@ -79,7 +79,7 @@ body {
 .last-played-button {
     background-color: #191818;
     text-transform: uppercase;
-    color:white ;
+    color: rgb(212, 212, 212) ;
     border:none;    
     align-items: center;
     padding: 10px;
@@ -95,12 +95,16 @@ body {
     top: 80px;
     height: 170px;
     width:150px;
+    transition: opacity, 0.3s;
+}
+.last-played-button:active{
+    opacity: 0.75;
 }
     
 .shared-button {
     background-color: #191818;
     text-transform: uppercase;
-    color:white ;
+    color: rgb(212, 212, 212) ;
     border:none;    
     align-items: center;
     padding: 10px;
@@ -116,11 +120,15 @@ body {
     top: 80px;
     height: 170px;
     width:150px;
+    transition: opacity, 0.3s;
+}
+.shared-button:active{
+    opacity: 0.75;
 }
 .watch-later-button{
     background-color: #191818;
     text-transform: uppercase;
-    color:white ;
+    color: rgb(212, 212, 212) ;
     border:none;    
     align-items: center;
     padding: 10px;
@@ -136,6 +144,11 @@ body {
     top: 80px;
     height: 170px;
     width:150px;
+    transition: opacity, 0.3s;
+}
+
+.watch-later-button:active{
+    opacity: 0.75;
 }
 
 

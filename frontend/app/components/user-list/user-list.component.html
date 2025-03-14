@@ -1,27 +1,25 @@
-<!DOCTYPE html>
 
 <div class="user-list-container">
-    <link rel="stylesheet" src="user-list.component.css">
-    <h2>UŽIVATELÉ</h2>
-  
-    <div *ngIf="users.length === 0" class="empty-list">Žádní uživatelé</div>
-  
-    <ul *ngIf="users.length > 0">
-      <li *ngFor="let user of users">
-        <span>{{ user.name }}</span>
-        <button (click)="removeUser(user)">❌</button>
-      </li>
-    </ul>
-  
-    <button class="add-btn" (click)="openPopup()">➕ Přidat uživatele</button>
-  
-    <div class="popup" *ngIf="popupVisible">
-      <div class="popup-content">
-        <h3>Přidat uživatele</h3>
-        <input [(ngModel)]="newUserName" placeholder="Jméno uživatele" />
-        <button (click)="addUser()">Přidat</button>
-        <button class="close-btn" (click)="closePopup()">Zavřít</button>
-      </div>
+  <h2>UŽIVATELÉ</h2>
+
+  <div *ngIf="!users?.length" class="empty-list">Žádní uživatelé</div>
+
+  <ul *ngIf="users?.length">
+    <li *ngFor="let user of users">
+      <span>{{ user.name }}</span>
+      <button (click)="removeUser(user.id)">❌</button>
+    </li>
+  </ul>
+
+  <button class="add-btn" (click)="openPopup()">➕ Přidat uživatele</button>
+
+  <div class="popup" *ngIf="popupVisible">
+    <div class="popup-content">
+      <h3>Přidat uživatele</h3>
+      <input [(ngModel)]="newUserName" placeholder="Jméno uživatele" />
+      <button (click)="addUser()">Přidat</button>
+      <button class="close-btn" (click)="closePopup()">Zavřít</button>
     </div>
   </div>
-
+</div>
+</html>

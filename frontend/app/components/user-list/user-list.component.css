@@ -1,0 +1,6 @@
+.popup{
+    display:flex;
+    position: fixed;
+    background-color: aqua;
+    right:350px;
+    top:20px;

@@ -67,15 +67,7 @@ body {
     height: 250px; /* Adjust height */
     margin: 0px;  /* Space from other elements */
 }
-.header{
-    font-size: 24px;  /* Make text larger */
-    font-weight: normal;  /* Make it bold */
-    text-transform: uppercase;  /* Make it all caps if needed */
-    display: inline-block;  /* Prevents unwanted effects from scaling */
-    letter-spacing: 3px;
-    position: fixed;
-    right:385px
-}
+
 .last-played-button {
     background-color: #191818;
     text-transform: uppercase;
@@ -221,4 +213,13 @@ body {
 
 }
 
+.header{
+    font-size: 24px;  /* Make text larger */
+    font-weight: normal;  /* Make it bold */
+    text-transform: uppercase;  /* Make it all caps if needed */
+    display: inline-block;  /* Prevents unwanted effects from scaling */
+    letter-spacing: 3px;
+    position: fixed;
+    right:385px;
+}
 

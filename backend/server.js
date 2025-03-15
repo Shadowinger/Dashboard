@@ -6,7 +6,7 @@ import fs from "fs";
 import cors from "cors";
 
 const app = express();
-const PORT = 3000;
+const PORT = 5500;
 const DB_FILE = "database.json";
 
 app.use(express.json());

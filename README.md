@@ -1,78 +1,55 @@
 # Dashboard Project
 
-This project is a simple **dashboard application** built with **Angular** for the frontend and **Node.js + Express** for the backend.
-
-## Project Structure
-
-```
-Dashboard-projekt/
-│── backend/
-│   ├── data/
-│   │   ├── database.json  # Mock database
-│   ├── routes/
-│   │   ├── users.js  # User-related API routes
-│   ├── server.js  # Main backend server
-│   ├── package.json  # Backend dependencies
-│
-│── frontend/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── dashboard/
-│   │   │   │   ├── dashboard.component.ts/html/css  # Main dashboard UI
-│   │   │   ├── user-list/
-│   │   │   │   ├── user-list.component.ts/html/css  # User list display
-│   │   │   ├── user-form/
-│   │   │   │   ├── user-form.component.ts/html/css  # User input form
-│   │   ├── services/
-│   │   │   ├── api.service.ts  # Handles API communication
-│   ├── app.component.ts/html  # Root component
-│   ├── app.module.ts  # Angular module configuration
-│   ├── styles.css  # Global styles
-│
-│── node_modules/  # Installed dependencies
-│── angular.json  # Angular project config
-│── package.json  # Project dependencies
-│── package-lock.json  # Dependency lock file
-│── Images/  # Screenshots & assets
-```
-
-## Setup Instructions
-
-### 1. Install Dependencies
-Run the following command in both the `backend/` and `frontend/` folders:
-```sh
-npm install
-```
-
-### 2. Start the Backend Server
-Navigate to the `backend/` folder and run:
-```sh
-node server.js
-```
-This will start an Express.js server.
-
-### 3. Start the Angular Frontend
-Navigate to the `frontend/` folder and run:
-```sh
-ng serve
-```
-The Angular app will be available at `http://localhost:4200/`.
-
-## API Endpoints
-
-| Method | Endpoint      | Description         |
-|--------|-------------|---------------------|
-| GET    | `/users`     | Get all users      |
-| POST   | `/users`     | Add a new user     |
-| DELETE | `/users/:id` | Delete a user      |
+## Overview
+This project is a modern dashboard built using Angular, designed for real-time data visualization and management. It includes features such as user management, appointment tracking, activity statistics, and media playlists.
 
 ## Features
+- 📊 **Dynamic Statistics** – Graphs and charts displaying various activities.
+- 🗓 **Appointments & Meetings** – Manage scheduled examinations and consultations.
+- 👤 **User Management** – List of active users with contact options.
+- 📹 **Media Playlists** – View, share, and organize recorded sessions.
+- 📷 **Camera Integration** – Display and manage recorded video feeds.
+- 🎨 **Modern UI** – Dark theme with clean, responsive design.
 
-✅ User list displayed dynamically  
-✅ Ability to add users through a popup form  
-✅ API-based backend with Express.js  
-✅ Simple and clean UI with Angular  
+## Tech Stack
+- **Frontend:** Angular, TypeScript, HTML, CSS
+- **Backend:** Express.js (if applicable)
+- **Database:** Static file (.json) but can use database like MONGODB/Postgresql
 
----
+## Installation
+```sh
+# Clone the repository
+git clone https://github.com/your-repo/dashboard-project.git
+cd dashboard-project
 
-This README provides a clear overview of the project, setup instructions, API documentation, and key features. Let me know if you need any updates! 🚀
+# Install dependencies
+npm install
+
+# Run the development server
+ng serve
+```
+
+## Running the Backend (if applicable)
+```sh
+cd backend
+npm install
+npm start
+```
+
+## Accessing the Dashboard
+- Open `http://localhost:4200` in your browser.
+- If running on a phone, ensure the computer and phone are on the same network and use `http://<your-local-ip>:4200`.
+
+## Deployment
+- Build for production:
+```sh
+ng build --configuration=production
+```
+- Deploy using your preferred hosting service (Netlify, Vercel, Firebase, etc.).
+
+## License
+This project is licensed under the MIT License.
+
+## Author
+Created by **Stanislav Křikava** 
+

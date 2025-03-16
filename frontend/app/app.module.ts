@@ -24,7 +24,7 @@ const routes: Routes = [
     DashboardComponent,
     UserListComponent,
     UserFormComponent
+    
   ],
-  bootstrap: [AppComponent]
 })
 export class AppModule { }

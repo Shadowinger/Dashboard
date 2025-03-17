@@ -5,10 +5,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from '../app/components/dashboard/dashboard.component';
 import { UserListComponent } from '../app/components/user-list/user-list.component';
+import { UserFormComponent } from 'app/components/user-form/user-form.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'users', component: UserListComponent },
+  { path: "", component: UserFormComponent}
 ];
 
 bootstrapApplication(AppComponent, {

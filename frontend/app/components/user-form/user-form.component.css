@@ -1,0 +1,94 @@
+.todays-checkups{
+    font-size: 22px;  /* Make text larger */
+    font-weight: normal;  /* Make it bold */
+    text-transform: uppercase;  /* Make it all caps if needed */
+    letter-spacing: 3px;
+    position: fixed;
+    right: 1270px;
+    top: 10px;
+    margin:10px;
+}
+
+
+
+.container-activities {
+    position: fixed;
+    right:1030px;
+    top:60px;
+    display: flex;  
+    flex-direction: row;  /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center;  /* Center items horizontally */
+    background-color: #222;  /* Dark background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;  /* Adjust width */
+    height: 200px; /* Adjust height */
+    margin: 0px;  /* Space from other elements */
+}
+
+.checkup-icon {
+    width: 35px;
+    height: 35px;
+    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
+    opacity: 0.7; /* Adjust transparency */
+}
+
+.video-icon{
+    width: 30px;
+    height: 30px;
+    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
+    opacity: 0.7; /* Adjust transparency */
+}
+
+.images-icon{
+    width: 35px;
+    height: 35px;
+    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
+    opacity: 0.7; /* Adjust transparency */
+    
+}
+
+.activities-text{
+    font-size: 10px;
+    text-transform: uppercase;
+    display: inline-block;
+    letter-spacing: 1px;
+    position: fixed;
+    margin-left: 10px;
+}
+
+.text-checkup{
+    position:absolute;
+    top:0%;
+    left:10%;
+    width: 40px;
+    
+}
+.checkup{
+    position: absolute;
+    top: 25%; /* Posune text dolů o 50 % výšky rodiče */
+    left: 10%; /* Posune text doprava o 50 % šířky rodiče */
+    border-bottom: 2px solid #141414; /* Černá čára */
+    padding-bottom: 8px; /* Odstup od textu */
+    width: 80%; /* Aby čára byla přes celý prvek */
+
+}
+.video{
+    position: absolute;
+    top: 50%; /* Posune text dolů o 50 % výšky rodiče */
+    left: 10%; /* Posune text doprava o 50 % šířky rodiče */
+    border-bottom: 2px solid #141414; /* Černá čára */
+    padding-bottom: 8px; /* Odstup od textu */
+    width: 80%; /* Aby čára byla přes celý prvek */
+
+}
+.images{
+    position: absolute;
+    top: 75%; /* Posune text dolů o 50 % výšky rodiče */
+    left: 10%; /* Posune text doprava o 50 % šířky rodiče */
+
+}
+
+

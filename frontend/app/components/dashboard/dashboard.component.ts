@@ -7,7 +7,7 @@ import { UserFormComponent } from "../user-form/user-form.component";
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  imports: [UserListComponent, UserFormComponent] // Přidání UserListComponent do imports
+  imports: [UserListComponent] // Přidání UserListComponent do imports
  // Přidání UserListComponent do imports
 })
 export class DashboardComponent { }

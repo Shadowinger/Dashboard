@@ -8,10 +8,13 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'users', component: UserListComponent },
+  { path: "", component: UserFormComponent},
+  { path: "", component: ChartComponent}
 ];
 
 @NgModule({

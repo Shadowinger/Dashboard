@@ -13,7 +13,7 @@
 
 .container-activities {
     position: fixed;
-    right:1030px;
+    right: 1015px;
     top:60px;
     display: flex;  
     flex-direction: row;  /* Stack items vertically */

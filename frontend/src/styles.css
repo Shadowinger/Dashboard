@@ -8,5 +8,8 @@ body {
 * {
     font-family: Calibri, sans-serif;
 }
-
-
+app-chart {
+    position: absolute;
+    width: 0;
+    height: 0;
+  }

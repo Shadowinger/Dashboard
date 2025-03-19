@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from '../app/components/dashboard/dashboard.component';
 import { UserListComponent } from '../app/components/user-list/user-list.component';
 import { UserFormComponent } from 'app/components/user-form/user-form.component';
+import { Chart } from 'chart.js';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },

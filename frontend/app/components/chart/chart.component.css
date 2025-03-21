@@ -2,14 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 230px;
     height: 200px; 
     background: #1e1e1e; 
     border-radius: 10px;
     padding: 20px;
     position: fixed;
     top: 60px;
-    left:130px;
+    left:120px;
  
   }
   
@@ -17,9 +17,11 @@
     display: none;
   }
   canvas {
-    max-width: 50%;
+    width: 15%;
     height: auto;
     position: absolute;
     right: 0%;
+    top:15%;
+
 
   }

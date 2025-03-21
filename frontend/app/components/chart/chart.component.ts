@@ -1,10 +1,10 @@
 import { Component, ElementRef, ViewChild, OnInit, OnDestroy } from '@angular/core';
 import { Chart, DoughnutController, ArcElement, Tooltip, Legend } from 'chart.js';
 import { HttpClient } from '@angular/common/http';
-import { Subscription, interval, switchMap } from 'rxjs';
+import { Subscription, interval, switchMap, map } from 'rxjs';
 import { lastValueFrom } from 'rxjs';
 
-// Registrace komponent pro Chart.js
+// Registrace komponent pro Chart.js - Chart 1
 Chart.register(DoughnutController, ArcElement, Tooltip, Legend);
 
 @Component({
@@ -26,7 +26,9 @@ export class ChartComponent implements OnInit, OnDestroy {
     }, 100);
   
     this.dataSubscription = interval(5000)
-      .pipe(switchMap(() => this.http.get<{ labels: string[], values: number[] }>('/assets/data.json')))
+      .pipe(switchMap(() => this.http.get<any>('/assets/data.json').pipe(
+        map(response => response.chart1) // Pouze data pro Chart 1
+      )))
       .subscribe(data => {
         if (data.labels.length && data.values.length) {
           this.updateChartData(data);
@@ -35,9 +37,10 @@ export class ChartComponent implements OnInit, OnDestroy {
   }
   async fetchData(): Promise<{ labels: string[], values: number[] }> {
     try {
-      const response = await lastValueFrom(this.http.get<{ labels: string[], values: number[] }>('/assets/data.json'));
-      console.log('Načtená data:', response);
-      return response;
+      const response = await lastValueFrom(this.http.get<any>('/assets/data.json'));
+      const chartData = response.chart1; // Načtení pouze dat pro Chart 1
+      console.log('Načtená data:', chartData);
+      return chartData;
     } catch (error) {
       console.error('Chyba při načítání dat:', error);
       return { labels: [], values: [] };

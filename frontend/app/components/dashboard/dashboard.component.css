@@ -138,22 +138,7 @@
 
 
 
-.container3 {
-    position: fixed;
-    right:25px;
-    top: 430px;
-    display: flex;  
-    flex-direction: column;  /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center;  /* Center items horizontally */
-    background-color: #222;  /* Dark background */
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 480px;  /* Adjust width */
-    height: 300px; /* Adjust height */
-    margin: 0px;  /* Space from other elements */
-}
+
 
 
 .playlist-icon{

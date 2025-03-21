@@ -1,0 +1,63 @@
+
+.chart-container {
+    position: fixed;
+    right:25px;
+    top: 430px;
+    display: flex;  
+    flex-direction: column;  /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center;  /* Center items horizontally */
+    background-color: #222;  /* Dark background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 480px;  /* Adjust width */
+    height: 300px; /* Adjust height */
+    margin: 0px;  /* Space from other elements */
+}
+.active{
+    font-size: 14px;  /* Make text larger */
+    font-weight: normal;  /* Make it bold */
+    text-transform: uppercase;  /* Make it all caps if needed */
+    display: inline-block;  /* Prevents unwanted effects from scaling */
+    letter-spacing: 2px;
+    position: absolute;
+    top:10%;
+    left:5%;
+}
+
+.activities-hospital{
+    color:rgb(187, 10, 187);
+    font-size: 12px;  /* Make text larger */
+    font-weight: normal;  /* Make it bold */
+    text-transform: uppercase;  /* Make it all caps if needed */
+    display: inline-block;  /* Prevents unwanted effects from scaling */
+    letter-spacing: 2px;
+    position: absolute;
+    text-decoration: underline;
+    top:14%;
+    right:5%;
+    cursor: pointer;
+    transition: opacity, 0.3s;
+}
+.activities-hospital:active{
+    opacity: 0.6;
+}
+.statistics{
+    font-size: 24px;  /* Make text larger */
+    font-weight: normal;  /* Make it bold */
+    text-transform: uppercase;  /* Make it all caps if needed */
+    display: inline-block;  /* Prevents unwanted effects from scaling */
+    letter-spacing: 3px;
+    position: absolute;
+    top:45%;
+    right:22.5%;
+}
+canvas {
+    width: 35%;
+    height: 40%;
+    position: absolute;
+    top:28%;
+
+
+}

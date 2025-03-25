@@ -1,5 +1,6 @@
 {
     "chart1": {
+        "id": "chart1",
         "labels": ["Hotovo", "Zbývá"],
         "values": [4, 4],
         "data": [
@@ -10,6 +11,7 @@
         ]
     },
     "chart2": {
+        "id": "chart2",
         "labels": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
         "datasets": [
             {
@@ -31,5 +33,82 @@
                 "fill": false
             }
         ]
-    }
+    },
+    "tableData": [
+        {
+            "id": 1,
+            "room": "TYRKYSOVÝ SÁL",
+            "time": "09:00",
+            "procedure": "HYSTEREKTOMIE",
+            "doctor": "KRATOCHVÍL J.",
+            "patient": {
+                "name": "ŠEDÁ K.",
+                "id": "123456/7890"
+            },
+            "department": "CHIR",
+            "status": "done"
+        },
+        {
+            "id": 2,
+            "room": "OR4",
+            "time": "10:20",
+            "procedure": "HYSTEREKTOMIE",
+            "doctor": "VÍT P.",
+            "patient": {
+                "name": "NOVOTNÝ A.",
+                "id": "123456/7890"
+            },
+            "department": "ORL",
+            "status": "done"
+        },
+        {
+            "id": 3,
+            "room": "CHIR 245",
+            "time": "12:15",
+            "procedure": "HYSTEREKTOMIE",
+            "doctor": "KRATOCHVÍL J.",
+            "patient": {
+                "name": "ZATLOUKALOVÁ M.",
+                "id": "123456/7890"
+            },
+            "department": "CHIR",
+            "status": "pending"
+        },
+        {
+            "id": 4,
+            "room": "MEET 12",
+            "time": "14:00",
+            "procedure": "ONLINE KONZULTACE",
+            "doctor": "TÁBORSKÝ T.",
+            "patient": null,
+            "department": "CHIR",
+            "status": "pending"
+        },
+        {
+            "id": 5,
+            "room": null,
+            "time": "14:40",
+            "procedure": "HYSTEREKTOMIE",
+            "doctor": "KRATOCHVÍL J.",
+            "patient": {
+                "name": "ZAHRADNICKÁ M.",
+                "id": "123456/7890"
+            },
+            "department": "CHIR",
+            "status": "pending"
+        },
+        {
+            "id": 6,
+            "room": "CONF_2",
+            "time": "16:30",
+            "procedure": "HYSTEREKTOMIE",
+            "doctor": "KRATOCHVÍL J.",
+            "patient": {
+                "name": "NOVOTNÝ A.",
+                "id": "123456/7890"
+            },
+            "department": null,
+            "status": "pending"
+        }
+    ]
 }

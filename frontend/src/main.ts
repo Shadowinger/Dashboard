@@ -10,13 +10,14 @@ import { UserFormComponent } from 'app/components/user-form/user-form.component'
 import { LineChartComponent } from 'app/components/line-chart/line-chart.component';
 import { Chart } from 'chart.js';
 import { AfterViewInit } from "@angular/core";
+import { TableComponent } from 'app/components/table/table.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'users', component: UserListComponent },
-  { path: "", component: UserFormComponent},
-  { path: "", component: LineChartComponent},
-  { path: "", component: ChartComponent}
+  { path: 'user-form', component: UserFormComponent },
+  { path: 'line-chart', component: LineChartComponent },
+  { path: 'table', component: TableComponent }
 ];
 
 bootstrapApplication(AppComponent, {

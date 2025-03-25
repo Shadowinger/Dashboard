@@ -3,7 +3,7 @@ import fs from "fs/promises"; // Používáme fs.promises pro async operace
 import cors from "cors";
 
 const app = express();
-const PORT = 5500; // Změněný port, aby se nekřížil s Angular aplikací
+const PORT = 5500; // Změna portu pro kompatibilitu s frontendem
 const DB_FILE = "database.json";
 
 app.use(express.json());
@@ -61,6 +61,26 @@ app.delete("/users/:id", async (req, res) => {
     res.json({ message: "Uživatel smazán" });
   } catch (error) {
     res.status(500).json({ error: "Chyba při zápisu do souboru" });
+  }
+});
+
+// Nový endpoint pro testovací data
+app.get("/api/data", async (req, res) => {
+  try {
+    const testData = {
+      chart1: { labels: ["A", "B"], values: [1, 2] },
+      chart2: { labels: ["C", "D"], values: [3, 4] },
+      tableData: [
+        { id: 1, procedure: "HYSTEREKTOMIE", doctor: "KRATOCHVÍL J.", patient: "ŠEDÁ K." },
+        { id: 2, procedure: "HYSTEREKTOMIE", doctor: "VÍT P.", patient: "NOVOTNÝ A." }
+      ]
+    };
+    console.log("API /api/data bylo zavoláno, posílám data:", testData);
+    res.setHeader("Content-Type", "application/json");
+    res.json(testData);
+  } catch (error) {
+    console.error("Chyba při zpracování dat:", error);
+    res.status(500).json({ error: "Chyba při zpracování dat" });
   }
 });
 

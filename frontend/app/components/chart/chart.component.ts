@@ -17,6 +17,8 @@ export class ChartComponent implements OnInit, OnDestroy {
   @ViewChild('myDonutChart', { static: true }) chartCanvas!: ElementRef<HTMLCanvasElement>;
   myChart!: Chart;
   private dataSubscription!: Subscription;
+  hotovo: number = 0;
+  zbyva: number = 0;
 
   constructor(private http: HttpClient) {}
 
@@ -25,7 +27,7 @@ export class ChartComponent implements OnInit, OnDestroy {
       this.fetchData().then(data => this.updateChart(data));
     }, 100);
   
-    this.dataSubscription = interval(5000)
+    this.dataSubscription = interval(1000)
       .pipe(switchMap(() => this.http.get<any>('/assets/data.json').pipe(
         map(response => response.chart1) // Pouze data pro Chart 1
       )))
@@ -52,6 +54,8 @@ export class ChartComponent implements OnInit, OnDestroy {
       data = await this.fetchData();
     }
     if (data.labels.length && data.values.length) {
+      this.hotovo = data.values[0]; // První hodnota = hotové úkoly
+      this.zbyva = data.values[1];  // Druhá hodnota = zbývající úkoly
       if (!this.myChart) {
         this.myChart = new Chart(this.chartCanvas.nativeElement, {
           type: 'doughnut',
@@ -84,6 +88,8 @@ export class ChartComponent implements OnInit, OnDestroy {
       console.error('Chybí data pro aktualizaci grafu:', data);
       return;
     }
+    this.hotovo = data.values[0];
+    this.zbyva = data.values[1];
     this.myChart.data.labels = data.labels;
     this.myChart.data.datasets[0].data = data.values;
     this.myChart.update();

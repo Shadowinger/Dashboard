@@ -12,16 +12,60 @@
     left:120px;
  
   }
+  .chart-numbers {
+
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+  
+  .gray {
+    color: rgb(65, 65, 65); 
+    position: absolute;
+    bottom: 20%;
+    left:7%; 
+  }
+  
+  .pink {
+    color: #e91e63;
+    position: absolute;
+    bottom: 8%;
+    left: 17%; 
+
+  }
+  .separator-6{
+    width: 28%; /* Délka čáry */
+    height: 3px; /* Tloušťka čáry */
+    background-color: rgb(0, 0, 0); /* Barva čáry */
+    transform: rotate(135deg); /* Sklon */
+    position: absolute;
+    bottom:20%;
+    left:1%;
+  }
+  .planned-text{
+    position:absolute;
+    top:0%;
+    left:5%;
+    width: 200px;
+    color: white;
+    font-size: 14px;  /* Make text larger */
+    font-weight: normal;  /* Make it bold */
+    text-transform: uppercase;  /* Make it all caps if needed */
+
+
+  }
   
   app-chart {
     display: none;
   }
   canvas {
-    width: 15%;
-    height: auto;
     position: absolute;
     right: 0%;
     top:15%;
+    width: 10%;
+    height: auto;
+
 
 
   }

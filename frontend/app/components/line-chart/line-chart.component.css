@@ -26,6 +26,22 @@
     left:5%;
 }
 
+.separator4{
+    position: absolute;
+    top: 89%;
+    width: 90%;
+    background-color: #000000;
+    height:2px;
+}
+.separator5{
+    position: absolute;
+    top: 20%;
+    right:4%;
+    width:34%;
+    background-color: #5d5d5d;
+    height:2px;
+}
+
 .activities-hospital{
     color:rgb(187, 10, 187);
     font-size: 12px;  /* Make text larger */
@@ -58,6 +74,11 @@ canvas {
     height: 40%;
     position: absolute;
     top:28%;
-
-
 }
+
+
+
+
+
+
+

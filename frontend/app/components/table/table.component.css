@@ -1,0 +1,122 @@
+.meetings{
+    margin:0;
+    position: absolute;
+    left:7.5%;
+    top:40%;
+    font-size: 22px;  /* Make text larger */
+    font-weight: normal;  /* Make it bold */
+    text-transform: uppercase;  /* Make it all caps if needed */
+    letter-spacing: 3px;
+}
+.appointment-wrapper {
+    width: 100%;
+    max-width: 500px; /* Nastav si vlastní šířku */
+    height: 300px;
+    margin: auto;
+    border: none;
+    border-radius: 20px;
+    background: #202020;
+    padding: 15px;
+    overflow: hidden;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top:45%;
+    left:7.5%;
+}
+  
+.appointment-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%; /* Přidej pevnou šířku */
+    height: 400px; /* Nastav pevnou výšku */
+    max-height: 500px; /* Výška tabulky - uprav podle potřeby */
+    overflow-y: auto; /* Scrollování pouze v této části */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.3) transparent;
+    background-color: #121212;
+    position: absolute;
+    top:45%;
+    left:7.5%;
+}
+.appointment-container::-webkit-scrollbar {
+    width: 8px;
+}
+.appointment-container::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+.appointment-box {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr 2fr 1fr 1fr;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: transform 0.2s ease, background 0.3s ease;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.appointment-box[data-id="1"] {
+    background: #2c3e50;
+}
+.appointment-box[data-id="2"] {
+    background: #8e44ad;
+}
+.appointment-box[data-id="3"] {
+    background: #27ae60;
+}
+.appointment-box:hover {
+    background: #1e1e1e;
+    transform: scale(1.01);
+}
+
+.bold {
+    font-weight: bold;
+}
+.room,
+.time,
+.procedure,
+.patient,
+.department,
+.status {
+    text-align: center;
+}
+  
+.green {
+    color: #57c84d;
+}
+.gray {
+    color: #888;
+}
+.status {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.status[data-id="1"] {
+    background-color: #f39c12;
+}
+.status[data-id="2"] {
+    background-color: #e74c3c;
+}
+.status[data-id="3"] {
+    background-color: #3498db;
+}
+.procedure[data-id="1"],
+.patient[data-id="1"] {
+    font-weight: bold;
+    color: #f1c40f;
+}
+.procedure[data-id="2"],
+.patient[data-id="2"] {
+    font-weight: bold;
+    color: #e74c3c;
+}
+.procedure[data-id="3"],
+.patient[data-id="3"] {
+    font-weight: bold;
+    color: #2ecc71;
+}

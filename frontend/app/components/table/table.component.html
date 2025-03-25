@@ -1,0 +1,22 @@
+<div>
+    <p class="meetings">Vyšetření a schůzky</p>
+</div>
+<div class="appointment-wrapper">
+    <div class="appointment-container">
+        <ul class="appointment-list">
+            <li *ngFor="let appt of appointments" class="appointment-box" [attr.data-id]="appt.id">
+                <div class="appointment-details">
+                    <div class="room"><strong>Místnost:</strong> {{ appt.room || '—' }}</div>
+                    <div class="time"><strong>Čas:</strong> {{ appt.time }}</div>
+                    <div class="procedure"><strong>Procedura:</strong> {{ appt.procedure }} ({{ appt.doctor }})</div>
+                    <div class="patient"><strong>Pacient:</strong> {{ appt.patient }} (ID: {{ appt.id }})</div>
+                    <div class="department"><strong>Oddělení:</strong> {{ appt.department }}</div>
+                    <div class="status">
+                        <span *ngIf="appt.status === 'done'" class="status-done">✔ Hotovo</span>
+                        <span *ngIf="appt.status === 'pending'" class="status-pending">⏳ Čeká se</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

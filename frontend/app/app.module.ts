@@ -10,6 +10,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { ChartComponent } from './components/chart/chart.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
+import { TableComponent } from './components/table/table.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'users', component: UserListComponent },
   { path: "", component: UserFormComponent},
   { path: "", component: ChartComponent},
-  { path: "", component: LineChartComponent}
+  { path: "", component: LineChartComponent},
+  { path: "", component: TableComponent }
 ];
 
 @NgModule({
@@ -31,7 +33,8 @@ const routes: Routes = [
     UserListComponent,
     UserFormComponent,
     ChartComponent,
-    LineChartComponent
+    LineChartComponent,
+    TableComponent
     
   ],
 })

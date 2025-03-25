@@ -19,7 +19,7 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
   constructor(private http: HttpClient) {}
 
   ngAfterViewInit() {
-    this.dataSubscription = interval(300).pipe(
+    this.dataSubscription = interval(1000).pipe(
       switchMap(() => this.http.get<any>('assets/data.json'))
     ).subscribe(response => {
       console.log('Response from API:', response);
@@ -49,7 +49,16 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
       return;
     }
     this.labels = data.labels;
-    this.datasets = data.datasets;
+    this.datasets = data.datasets.map((dataset: any) => {
+      if (dataset.label === 'Vyšetření') {
+        dataset.backgroundColor = '#FFA500';
+      } else if (dataset.label === 'Videozáznamy') {
+        dataset.backgroundColor = '#D81B60';
+      } else if (dataset.label === 'Snímky') {
+        dataset.backgroundColor = '#1976D2';
+      }
+      return dataset;
+    });
 
     const ctx = document.getElementById('myChart') as HTMLCanvasElement;
 
@@ -74,6 +83,9 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
             callbacks: {
               label: (tooltipItem) => {
                 return `${tooltipItem.dataset.label}: ${tooltipItem.raw}`;
+              },
+              afterLabel: (tooltipItem) => {
+                return `Hodnota: ${tooltipItem.raw}`;
               }
             },
             backgroundColor: '#222222',
@@ -84,20 +96,20 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
         scales: {
           x: {
             grid: {
-              color: '#444444',
+              color: '#000000',
               lineWidth: 1
             },
             ticks: {
-              color: '#cccccc'
+              color: 'white'
             }
           },
           y: {
             grid: {
-              color: '#444444',
+              color: '#000000',
               lineWidth: 1
             },
             ticks: {
-              color: '#cccccc'
+              color: 'white'
             }
           }
         },
@@ -107,7 +119,7 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
             backgroundColor: 'transparent'
           }
         },
-        backgroundColor: '#222222'
+        backgroundColor: '#121212'
       }
     });
   }
@@ -118,7 +130,16 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
       return;
     }
     this.labels = data.labels;
-    this.datasets = data.datasets;
+    this.datasets = data.datasets.map((dataset: any) => {
+      if (dataset.label === 'Vyšetření') {
+        dataset.backgroundColor = '#FFA500';
+      } else if (dataset.label === 'Videozáznamy') {
+        dataset.backgroundColor = '#D81B60';
+      } else if (dataset.label === 'Snímky') {
+        dataset.backgroundColor = '#1976D2';
+      }
+      return dataset;
+    });
 
     this.chart.update();
   }

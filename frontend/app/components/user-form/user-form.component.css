@@ -3,9 +3,9 @@
     font-weight: normal;  /* Make it bold */
     text-transform: uppercase;  /* Make it all caps if needed */
     letter-spacing: 3px;
-    position: fixed;
-    right: 1270px;
-    top: 10px;
+    position: absolute;
+    top:1%;
+    left: 6.8%;
     margin:10px;
 }
 

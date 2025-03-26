@@ -1,4 +1,3 @@
-
 .container{
     position: fixed;
     left: 25px;
@@ -134,7 +133,6 @@
 .watch-later-button:active{
     opacity: 0.75;
 }
-
 
 
 

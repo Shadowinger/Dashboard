@@ -36,7 +36,7 @@
     },
     "tableData": [
         {
-            "id": 1,
+            "poradi": 1,
             "room": "TYRKYSOVÝ SÁL",
             "time": "09:00",
             "procedure": "HYSTEREKTOMIE",
@@ -49,7 +49,7 @@
             "status": "done"
         },
         {
-            "id": 2,
+            "poradi": 2,
             "room": "OR4",
             "time": "10:20",
             "procedure": "HYSTEREKTOMIE",
@@ -62,7 +62,7 @@
             "status": "done"
         },
         {
-            "id": 3,
+            "poradi": 3,
             "room": "CHIR 245",
             "time": "12:15",
             "procedure": "HYSTEREKTOMIE",
@@ -75,18 +75,18 @@
             "status": "pending"
         },
         {
-            "id": 4,
+            "poradi": 4,
             "room": "MEET 12",
             "time": "14:00",
             "procedure": "ONLINE KONZULTACE",
             "doctor": "TÁBORSKÝ T.",
-            "patient": null,
+            "patient": "N/A",
             "department": "CHIR",
             "status": "pending"
         },
         {
-            "id": 5,
-            "room": null,
+            "poradi": 5,
+            "room": "N/A",
             "time": "14:40",
             "procedure": "HYSTEREKTOMIE",
             "doctor": "KRATOCHVÍL J.",
@@ -98,7 +98,7 @@
             "status": "pending"
         },
         {
-            "id": 6,
+            "poradi": 6,
             "room": "CONF_2",
             "time": "16:30",
             "procedure": "HYSTEREKTOMIE",
@@ -107,7 +107,7 @@
                 "name": "NOVOTNÝ A.",
                 "id": "123456/7890"
             },
-            "department": null,
+            "department": "N/A",
             "status": "pending"
         }
     ]

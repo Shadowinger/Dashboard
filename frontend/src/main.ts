@@ -1,9 +1,9 @@
 import { ChartComponent } from './../app/components/chart/chart.component';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { AppComponent } from '../app/app.component'; 
+import { AppComponent } from '../app/app.component';
 import { importProvidersFrom } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http'; // Make sure this is imported
 import { DashboardComponent } from '../app/components/dashboard/dashboard.component';
 import { UserListComponent } from '../app/components/user-list/user-list.component';
 import { UserFormComponent } from 'app/components/user-form/user-form.component';
@@ -22,9 +22,7 @@ const routes: Routes = [
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(
-      RouterModule.forRoot(routes),
-      HttpClientModule
-    )
+    importProvidersFrom(RouterModule.forRoot(routes)),
+    provideHttpClient() // Correct way to set up HTTP client in newer versions of Angular
   ]
 }).catch(err => console.error(err));

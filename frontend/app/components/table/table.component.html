@@ -4,9 +4,9 @@
 <div class="appointment-wrapper">
     <div class="appointment-container">
         <table class="appointment-table appointment-table-striped">
-            <pre *ngIf="appointments">{{ appointments | json }}</pre>   
             <thead>
                 <tr>
+                    <th>Pořadí</th>
                     <th>Místnost</th>
                     <th>Čas</th>
                     <th>Procedura</th>
@@ -17,16 +17,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngIf="appointments.length === 0">
-                    <td colspan="7" class="no-data-message">⚠️ Žádná data k dispozici.</td>
+                <tr *ngIf="tableData.length === 0">
+                    <td colspan="8" class="no-data-message">⚠️ Data nejsou k dispozici nebo mají neplatný formát.</td>
                 </tr>
-                <pre *ngIf="tableData">{{ tableData | json }}</pre>
-                <tr *ngFor="let appt of tableData" [attr.data-id]="appt.id">
+                <tr *ngFor="let appt of tableData" [attr.data-id]="appt.poradi">
+                    <td>{{ appt.poradi }}</td>
                     <td>{{ appt.room ?? 'N/A' }}</td>
                     <td>{{ appt.time }}</td>
                     <td>{{ appt.examination ?? 'Neznámé vyšetření' }}</td>
                     <td>{{ appt.doctor ?? 'Neznámý lékař' }}</td>
-                    <td>{{ appt.patient?.name ?? 'Neznámý pacient' }} (ID: {{ appt.patient?.id ?? 'N/A' }})</td>
+                    <td>{{ appt.patient?.name ?? 'Neznámý pacient' }}</td>
                     <td>{{ appt.department ?? 'N/A' }}</td>
                     <td [ngClass]="{ 'status-done': appt.status === 'done', 'status-pending': appt.status === 'pending', 'status-unknown': !appt.status }">
                         <span *ngIf="appt.status === 'done'" class="status-done">✔ Hotovo</span>

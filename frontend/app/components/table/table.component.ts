@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 interface Appointment {
-  id: string;
+  poradi: number;
   room: string | null;
   time: string;
   examination: string;
@@ -19,56 +19,42 @@ interface Appointment {
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  appointments: Appointment[] = [];
+  tableData: Appointment[] = [];
   errorMessage: string | null = null;
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.loadAppointments();
+    this.loadAppointments(); // Načti data při spuštění komponenty
+    setInterval(() => this.loadAppointments(), 5000); // Načítat data každých 5 sekund
   }
 
   loadAppointments() {
     console.log("📥 Načítám data z assets/data.json...");
 
-    this.http.get<{ tableData: Appointment[] }>('assets/data.json').subscribe({
+    this.http.get<Appointment[]>('assets/data.json').subscribe({
       next: (data) => {
         console.log("✅ Data načtena:", data);
+        console.log("📥 Odpověď z API:", data); // Logování odpovědi z API
 
-        if (data?.tableData && Array.isArray(data.tableData) && data.tableData.length > 0) {
-          try {
-            this.appointments = data.tableData.map((item: Appointment) => ({
-              id: item.id?.toString() || 'N/A',
-              room: item.room ?? 'N/A',
-              time: item.time ?? 'N/A',
-              examination: item.examination ?? 'Neznámé vyšetření',
-              doctor: item.doctor ?? 'Neznámý lékař',
-              patient: item.patient ? { name: item.patient.name } : { name: 'Neznámý pacient' },
-              department: item.department ?? 'Neuvedeno',
-              status: item.status ?? 'unknown'
-            }));
-
-            console.log("📋 Zpracovaná data:", this.appointments);
-            this.errorMessage = null;
-          } catch (error) {
-            console.error("⚠️ Chyba při mapování dat:", error);
-            this.errorMessage = "⚠️ Chyba při zpracování dat.";
-            this.appointments = [];
-          }
+        if (Array.isArray(data) && data.length > 0) {
+          this.tableData = data.map((item, index) => ({
+            ...item,
+            poradi: index + 1 // Přiřazení pořadí místo původního ID
+          }));
+          this.errorMessage = null;
         } else {
           this.errorMessage = "⚠️ Žádná data k dispozici.";
           console.warn("⚠️ Data nejsou k dispozici nebo mají neplatný formát.");
-          this.appointments = [];
         }
 
-        console.log("📊 Aktuální stav appointments:", this.appointments);
+        console.log("📊 Aktuální stav tableData:", this.tableData); // Log aktuálního stavu tableData
         this.cdr.detectChanges(); // Nutí Angular aktualizovat šablonu
       },
       error: (err) => {
         this.errorMessage = `❌ Chyba při načítání dat: ${err.status} - ${err.statusText}`;
         console.error("❌ Chyba při načítání dat:", err);
-        console.error("❌ Detaily chyby:", err.message);
-        this.appointments = [];
+        this.tableData = [];
       }
     });
   }

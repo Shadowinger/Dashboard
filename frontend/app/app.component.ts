@@ -12,6 +12,5 @@ import { TableComponent } from "./components/table/table.component";
   templateUrl: './app.component.html',
   imports: [DashboardComponent, UserListComponent, UserFormComponent, ChartComponent, LineChartComponent, TableComponent] // Přidání komponent do imports
  // Přidání komponent do imports
- // Přidání komponent do imports
 })
 export class AppComponent { }

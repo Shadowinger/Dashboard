@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
@@ -26,7 +26,6 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
     RouterModule.forRoot(routes),
     AppComponent,
     DashboardComponent,
@@ -37,5 +36,8 @@ const routes: Routes = [
     TableComponent
     
   ],
+  providers: [
+    provideHttpClient(withInterceptorsFromDi())
+  ]
 })
 export class AppModule { }

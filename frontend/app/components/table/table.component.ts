@@ -1,22 +1,33 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
+interface Patient {
+  name: string;
+  id?: string;
+}
 
 interface Appointment {
   poradi: number;
   room: string | null;
   time: string;
-  examination: string;
+  procedure: string;
   doctor: string;
-  patient: { name: string } | null;
+  patient: Patient | string;
   department: string | null;
   status: string;
 }
 
+interface ApiResponse {
+  tableData: Appointment[];
+}
+
 @Component({
-  standalone: true,  
+  standalone: true,
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']
+  styleUrls: ['./table.component.css'],
+  imports: [CommonModule]
 })
 export class TableComponent implements OnInit {
   tableData: Appointment[] = [];
@@ -25,35 +36,34 @@ export class TableComponent implements OnInit {
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
-    this.loadAppointments(); // Načti data při spuštění komponenty
-    setInterval(() => this.loadAppointments(), 5000); // Načítat data každých 5 sekund
+    this.loadAppointments(); // Load data on component initialization
+    setInterval(() => this.loadAppointments(), 5000); // Reload data every 5 seconds
   }
 
   loadAppointments() {
-    console.log("📥 Načítám data z assets/data.json...");
+    console.log("📥 Loading data from assets/data.json...");
 
-    this.http.get<Appointment[]>('assets/data.json').subscribe({
-      next: (data) => {
-        console.log("✅ Data načtena:", data);
-        console.log("📥 Odpověď z API:", data); // Logování odpovědi z API
+    this.http.get<ApiResponse>('assets/data.json').subscribe({
+      next: (response) => {
+        console.log("✅ Data loaded:", response.tableData);
 
-        if (Array.isArray(data) && data.length > 0) {
-          this.tableData = data.map((item, index) => ({
+        if (Array.isArray(response.tableData) && response.tableData.length > 0) {
+          this.tableData = response.tableData.map((item, index) => ({
             ...item,
-            poradi: index + 1 // Přiřazení pořadí místo původního ID
+            poradi: index + 1 // Assign order instead of original ID
           }));
           this.errorMessage = null;
         } else {
-          this.errorMessage = "⚠️ Žádná data k dispozici.";
-          console.warn("⚠️ Data nejsou k dispozici nebo mají neplatný formát.");
+          this.errorMessage = "⚠️ No data available.";
+          console.warn("⚠️ Data is not available or has an invalid format.");
         }
 
-        console.log("📊 Aktuální stav tableData:", this.tableData); // Log aktuálního stavu tableData
-        this.cdr.detectChanges(); // Nutí Angular aktualizovat šablonu
+        console.log("📊 Current tableData state:", this.tableData);
+        this.cdr.detectChanges(); // Force Angular to update the template
       },
       error: (err) => {
-        this.errorMessage = `❌ Chyba při načítání dat: ${err.status} - ${err.statusText}`;
-        console.error("❌ Chyba při načítání dat:", err);
+        this.errorMessage = `❌ Error loading data: ${err.status} - ${err.statusText}`;
+        console.error("❌ Error loading data:", err);
         this.tableData = [];
       }
     });

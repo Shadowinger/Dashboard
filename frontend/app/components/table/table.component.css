@@ -1,136 +1,155 @@
-.meetings {
-    margin: 0;
+:root {
+    --bg-primary: #121212;
+    --bg-secondary: #1E1E1E;
+    --bg-table: #252525;
+    --text-primary: white;
+    --text-secondary: #888;
+    --hover-color: #333;
+}
+
+
+
+.app-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
     position: absolute;
     left: 7.5%;
-    top: 40%;
-    font-size: 22px;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+    bottom: 40%;
 }
 
-.appointment-wrapper {
-    width: 90%;
-    max-width: 510px;
-    height: auto;
-    margin: auto;
-    border: none;
-    border-radius: 20px;
-    background: #202020;
-    padding: 15px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
-
-}
-
-.appointment-container {
+.meetings-section {
+    position: absolute;
+    left: 7.5%;
+    bottom: 40%;
+    width: 85%;
+    height: 50%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-height: 500px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
-    position: relative;
-    padding: 10px;
+    padding: min(3vw, 20px);
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.appointment-container::-webkit-scrollbar {
-    width: 8px;
-}
-
-.appointment-container::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-}
-
-.appointment-box {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+.meetings-header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
+    margin-bottom: min(3vh, 20px);
+    width: 100%;
+}
+
+.meetings-title {
+    font-size: clamp(16px, 2.5vw, 24px);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.meetings-table-wrapper {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--bg-table);
+    border-radius: min(2vw, 12px);
+    padding: min(2vw, 15px);
+    width: 100%;
+}
+
+.meetings-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 min(1.5vh, 10px);
+    table-layout: fixed;
+}
+
+.meetings-table thead th {
+    color: var(--text-secondary);
+    font-size: clamp(10px, 1vw, 12px);
     font-weight: 500;
-    transition: transform 0.2s ease, background 0.3s ease;
-    margin-bottom: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: #292929;
+    text-transform: uppercase;
+    padding: min(1.5vh, 10px);
+    text-align: left;
+    background-color: transparent;
+    border-bottom: 1px solid #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.appointment-box:hover {
-    background: #1e1e1e;
-    transform: scale(1.01);
+.meetings-table tbody tr {
+    background-color: #2C2C2C;
+    transition: background-color 0.3s ease;
 }
 
-/* Dynamické zvýraznění řádků podle ID */
-.appointment-box[data-id="1"] {
-    background: #2c3e50;
+.meetings-table tbody tr:hover {
+    background-color: var(--hover-color);
 }
 
-.appointment-box[data-id="2"] {
-    background: #8e44ad;
-}
-
-.appointment-box[data-id="3"] {
-    background: #27ae60;
-}
-
-/* Stylování textu pro pacienty a procedury */
-.bold {
-    font-weight: bold;
+.meetings-table td {
+    padding: min(2vh, 15px) min(1.5vw, 10px);
+    color: var(--text-primary);
+    font-size: clamp(12px, 1.2vw, 14px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .status-done {
-    background-color: #57c84d;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 5px;
+    color: #4CAF50;
+    font-weight: bold;
 }
 
 .status-pending {
-    background-color: #e74c3c;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 5px;
+    color: #FFC107;
+    font-weight: bold;
 }
 
-.status-unknown {
-    background-color: #f1c40f;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 5px;
+.status-canceled {
+    color: #F44336;
+    font-weight: bold;
 }
 
-/* Dynamická kontrola null hodnot pro pacienty a procedury */
-.patient-null,
-.procedure-null {
-    color: #7f8c8d;
-    font-style: italic;
+/* Custom scrollbar */
+.meetings-table-wrapper::-webkit-scrollbar {
+    width: min(1vw, 8px);
 }
 
-/* Responzivita */
-@media (max-width: 768px) {
-    .appointment-box {
-        grid-template-columns: repeat(3, 1fr);
-        font-size: 14px;
-        padding: 8px;
+.meetings-table-wrapper::-webkit-scrollbar-track {
+    background: var(--bg-table);
+}
+
+.meetings-table-wrapper::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.meetings-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    .meetings-section {
+        left: 7.5%;
+        bottom: 40%;
+        width: 85%;
     }
 }
 
-@media (max-width: 480px) {
-    .appointment-box {
-        grid-template-columns: repeat(2, 1fr);
-        font-size: 12px;
-        padding: 6px;
+@media screen and (max-width: 768px) {
+    .meetings-section {
+        left: 5%;
+        bottom: 35%;
+        width: 90%;
     }
 }
 
-.appointment-box:nth-child(even) {
-    background: #343434;
-}
-
-tbody {
-    display: table-row-group !important;
+@media screen and (max-width: 480px) {
+    .meetings-section {
+        left: 3%;
+        bottom: 30%;
+        width: 94%;
+    }
 }

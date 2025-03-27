@@ -24,9 +24,15 @@
                     <td>{{ appt.poradi }}</td>
                     <td>{{ appt.room ?? 'N/A' }}</td>
                     <td>{{ appt.time }}</td>
-                    <td>{{ appt.examination ?? 'Neznámé vyšetření' }}</td>
+                    <td>{{ appt.procedure ?? 'Neznámé vyšetření' }}</td>
                     <td>{{ appt.doctor ?? 'Neznámý lékař' }}</td>
-                    <td>{{ appt.patient?.name ?? 'Neznámý pacient' }}</td>
+                    <td>
+                        {{ 
+                            typeof appt.patient === 'object' ? 
+                            (appt.patient?.name ?? 'Neznámý pacient') : 
+                            (appt.patient || 'Neznámý pacient') 
+                        }}
+                    </td>
                     <td>{{ appt.department ?? 'N/A' }}</td>
                     <td [ngClass]="{ 'status-done': appt.status === 'done', 'status-pending': appt.status === 'pending', 'status-unknown': !appt.status }">
                         <span *ngIf="appt.status === 'done'" class="status-done">✔ Hotovo</span>

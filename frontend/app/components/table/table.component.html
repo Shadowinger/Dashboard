@@ -1,46 +1,56 @@
-<div>
-    <p class="meetings">Vyšetření a schůzky</p>
-</div>
-<div class="appointment-wrapper">
-    <div class="appointment-container">
-        <table class="appointment-table appointment-table-striped">
-            <thead>
-                <tr>
-                    <th>Pořadí</th>
-                    <th>Místnost</th>
-                    <th>Čas</th>
-                    <th>Procedura</th>
-                    <th>Lékař</th>
-                    <th>Pacient</th>
-                    <th>Oddělení</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngIf="tableData.length === 0">
-                    <td colspan="8" class="no-data-message">⚠️ Data nejsou k dispozici nebo mají neplatný formát.</td>
-                </tr>
-                <tr *ngFor="let appt of tableData" [attr.data-id]="appt.poradi">
-                    <td>{{ appt.poradi }}</td>
-                    <td>{{ appt.room ?? 'N/A' }}</td>
-                    <td>{{ appt.time }}</td>
-                    <td>{{ appt.procedure ?? 'Neznámé vyšetření' }}</td>
-                    <td>{{ appt.doctor ?? 'Neznámý lékař' }}</td>
-                    <td>
-                        {{ 
-                            typeof appt.patient === 'object' ? 
-                            (appt.patient?.name ?? 'Neznámý pacient') : 
-                            (appt.patient || 'Neznámý pacient') 
-                        }}
-                    </td>
-                    <td>{{ appt.department ?? 'N/A' }}</td>
-                    <td [ngClass]="{ 'status-done': appt.status === 'done', 'status-pending': appt.status === 'pending', 'status-unknown': !appt.status }">
-                        <span *ngIf="appt.status === 'done'" class="status-done">✔ Hotovo</span>
-                        <span *ngIf="appt.status === 'pending'" class="status-pending">⏳ Čeká se</span>
-                        <span *ngIf="!appt.status" class="status-unknown">❔ Neznámý</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+<div class="app-container">
+    <div class="meetings-section">
+        <div class="meetings-header">
+            <h2 class="meetings-title">Vyšetření a schůzky</h2>
+        </div>
+        <div class="meetings-table-wrapper">
+            <table class="meetings-table">
+                <thead>
+                    <tr>
+                        <th>Místnost</th>
+                        <th>Čas</th>
+                        <th>Vyšetření, Lékař</th>
+                        <th>Pacient</th>
+                        <th>Oddělení</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="tableData.length === 0">
+                        <td colspan="6" class="no-data-message">⚠️ Data nejsou k dispozici nebo mají neplatný formát.</td>
+                    </tr>
+                    <tr *ngFor="let appt of tableData" [attr.data-id]="appt.poradi">
+                        <td>{{ appt.room ?? 'N/A' }}</td>
+                        <td>{{ appt.time }}</td>
+                        <td>{{ appt.procedure ?? 'Neznámé vyšetření' }}<br>{{ appt.doctor ?? 'Neznámý lékař' }}</td>
+                        <td>
+                            {{ 
+                                typeof appt.patient === 'object' ? 
+                                (appt.patient?.name ?? 'Neznámý pacient') : 
+                                (appt.patient || 'Neznámý pacient') 
+                            }}
+                        </td>
+                        <td>{{ appt.department ?? 'N/A' }}</td>
+                        <td>
+                            <span 
+                                [ngClass]="{
+                                    'status-done': appt.status === 'done', 
+                                    'status-pending': appt.status === 'pending', 
+                                    'status-canceled': appt.status === 'canceled'
+                                }"
+                            >
+                                <ng-container [ngSwitch]="appt.status">
+                                    <span *ngSwitchCase="'done'">✔ Hotovo</span>
+                                    <span *ngSwitchCase="'pending'">⏳ Čeká se</span>
+                                    <span *ngSwitchCase="'canceled'">✖ Zrušeno</span>
+                                    <span *ngSwitchDefault>❔ Neznámý</span>
+                                </ng-container>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

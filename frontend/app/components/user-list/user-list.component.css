@@ -5,13 +5,13 @@
     display: inline-block;  /* Prevents unwanted effects from scaling */
     letter-spacing: 3px;
     position: fixed;
-    right:830px;
+    right:780px;
 }
 .separator-2 {
     width: 2px;
     background-color: #272727;
     position:fixed;
-    right: 1000px;
+    right: 950px;
     top: 20px;
     bottom: 10px;
 }

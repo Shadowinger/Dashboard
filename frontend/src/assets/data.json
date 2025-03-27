@@ -86,7 +86,7 @@
         },
         {
             "poradi": 5,
-            "room": "N/A",
+            "room": null,
             "time": "14:40",
             "procedure": "HYSTEREKTOMIE",
             "doctor": "KRATOCHVÍL J.",
@@ -99,7 +99,7 @@
         },
         {
             "poradi": 6,
-            "room": "CONF_2",
+            "room": "CONF-2",
             "time": "16:30",
             "procedure": "HYSTEREKTOMIE",
             "doctor": "KRATOCHVÍL J.",
@@ -107,8 +107,48 @@
                 "name": "NOVOTNÝ A.",
                 "id": "123456/7890"
             },
-            "department": "N/A",
-            "status": "pending"
-        }
+            "department": null,
+            "status": "canceled"
+        },
+        {
+            "poradi": 6,
+            "room": "CONF-2",
+            "time": "16:30",
+            "procedure": "HYSTEREKTOMIE",
+            "doctor": "KRATOCHVÍL J.",
+            "patient": {
+                "name": "NOVOTNÝ A.",
+                "id": "123456/7890"
+            },
+            "department": null,
+            "status": "canceled"
+        },
+        {
+            "poradi": 6,
+            "room": "CONF-2",
+            "time": "16:30",
+            "procedure": "HYSTEREKTOMIE",
+            "doctor": "KRATOCHVÍL J.",
+            "patient": {
+                "name": "NOVOTNÝ A.",
+                "id": "123456/7890"
+            },
+            "department": null,
+            "status": "canceled"
+        },
+        {
+            "poradi": 6,
+            "room": "CONF-2",
+            "time": "16:30",
+            "procedure": "HYSTEREKTOMIE",
+            "doctor": "KRATOCHVÍL J.",
+            "patient": {
+                "name": "NOVOTNÝ A.",
+                "id": "123456/7890"
+            },
+            "department": null,
+            "status": "canceled"
+        }   
+
     ]
 }

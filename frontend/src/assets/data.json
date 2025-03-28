@@ -2,13 +2,8 @@
     "chart1": {
         "id": "chart1",
         "labels": ["Hotovo", "Zbývá"],
-        "values": [4, 4],
-        "data": [
-            { "label": "Jan", "series1": 10, "series2": 15, "series3": 8 },
-            { "label": "Feb", "series1": 20, "series2": 25, "series3": 18 },
-            { "label": "Mar", "series1": 30, "series2": 35, "series3": 28 },
-            { "label": "Apr", "series1": 40, "series2": 45, "series3": 38 }
-        ]
+        "values": [4, 4]
+
     },
     "chart2": {
         "id": "chart2",
@@ -147,8 +142,12 @@
                 "id": "123456/7890"
             },
             "department": null,
-            "status": "canceled"
-        }   
+            "status": "done"
+        }
 
-    ]
+    ],
+    "Saved":{
+        "labels":["vysetreni", "videozaznamy", "snimky" ],
+        "values":[7, 12, 140]
+    }
 }

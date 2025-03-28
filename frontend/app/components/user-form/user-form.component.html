@@ -2,14 +2,20 @@
 
 <div class="container-activities">
     <p class="text-checkup">ZAZNAMENANÉ AKTIVITY:</p>
-    <div class="checkup"><img src="assets/Images/heart-rate-svgrepo-com.svg" alt="icon" class="checkup-icon"><p class="activities-text">VYŠETŘENÍ</p></div>
-    <div class="video"><img src="assets/Images/video-svgrepo-com.svg" alt="icon" class="video-icon"><p class="activities-text">VIDEOZÁZNAMY</p></div>
-    <div class="images"><img src="assets/Images/picture-svgrepo-com.svg" alt="icon" class="images-icon"><p class="activities-text">SNÍMKY</p></div>
+    <div class="checkup">
+        <img src="assets/Images/heart-rate-svgrepo-com.svg" alt="icon" class="checkup-icon">
+        <p class="activities-text">{{ savedData?.labels[0] }}</p>
+        <span class="yellow">{{ savedData?.values[0] }}</span>
+    </div>
+    <div class="video">
+        <img src="assets/Images/video-svgrepo-com.svg" alt="icon" class="video-icon">
+        <p class="activities-text">{{ savedData?.labels[1] }}</p>
+        <span class="pink">{{ savedData?.values[1] }}</span>
+    </div>
+    <div class="images">
+        <img src="assets/Images/picture-svgrepo-com.svg" alt="icon" class="images-icon">
+        <p class="activities-text">{{ savedData?.labels[2] }}</p>
+        <span class="blue">{{ savedData?.values[2] }}</span>
+    </div>
     <div class="separator3"></div>
 </div>
-
-
-
-
-
-    

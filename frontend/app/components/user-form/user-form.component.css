@@ -1,7 +1,5 @@
-
-
 .todays-checkups{
-    font-size: 22px;  /* Make text larger */
+    font-size: 1.375rem;  /* Make text larger */
     font-weight: normal;  /* Make it bold */
     text-transform: uppercase;  /* Make it all caps if needed */
     letter-spacing: 3px;
@@ -11,49 +9,52 @@
     margin:10px;
 }
 
-
-
 .container-activities {
     position: fixed;
-    left:470px;
-    top:60px;
+    left: 35%;
+    top: 6vh;
+    transform: translateX(-50%);
     display: flex;  
-    flex-direction: row;  /* Stack items vertically */
+    flex-direction: column;  /* Stack items vertically */
     justify-content: center; /* Center items vertically */
     align-items: center;  /* Center items horizontally */
     background-color: #222;  /* Dark background */
     color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;  /* Adjust width */
-    height: 200px; /* Adjust height */
+    padding: 2vw;
+    border-radius: 0.6vw;
+    width: 20vw;  /* Adjust width */
+    max-width: 190px;
+    height: auto; /* Adjust height */
+    min-height: 190px;
     margin: 0px;  /* Space from other elements */
 }
 
 .checkup-icon {
-    width: 35px;
-    height: 35px;
+    width: 10vw;
+    max-width: 35px;
+    height: auto;
     filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
     opacity: 0.7; /* Adjust transparency */
 }
 
 .video-icon{
-    width: 30px;
-    height: 30px;
+    width: 10vw;
+    max-width: 30px;
+    height: auto;
     filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
     opacity: 0.7; /* Adjust transparency */
 }
 
 .images-icon{
-    width: 35px;
-    height: 35px;
+    width: 10vw;
+    max-width: 35px;
+    height: auto;
     filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
     opacity: 0.7; /* Adjust transparency */
-    
 }
 
 .activities-text{
-    font-size: 10px;
+    font-size: 0.7rem;
     text-transform: uppercase;
     display: inline-block;
     letter-spacing: 1px;
@@ -66,8 +67,8 @@
     top:0%;
     left:10%;
     width: 40px;
-    
 }
+
 .checkup{
     position: absolute;
     top: 25%; /* Posune text dolů o 50 % výšky rodiče */
@@ -75,8 +76,8 @@
     border-bottom: 2px solid #141414; /* Černá čára */
     padding-bottom: 8px; /* Odstup od textu */
     width: 80%; /* Aby čára byla přes celý prvek */
-
 }
+
 .video{
     position: absolute;
     top: 50%; /* Posune text dolů o 50 % výšky rodiče */
@@ -84,13 +85,96 @@
     border-bottom: 2px solid #141414; /* Černá čára */
     padding-bottom: 8px; /* Odstup od textu */
     width: 80%; /* Aby čára byla přes celý prvek */
-
 }
+
 .images{
     position: absolute;
     top: 75%; /* Posune text dolů o 50 % výšky rodiče */
     left: 10%; /* Posune text doprava o 50 % šířky rodiče */
-
 }
 
+.yellow {
+    color: #ff9800; /* Oranžová */
+    font-size: 2vw;
+    font-weight: bold;
+    position: absolute;
+    bottom:15%;
+    left:180px;
+}
 
+.pink {
+    color: #e91e63; /* Růžová */
+    font-size: 2vw;
+    font-size: 29px;
+    font-weight: bold;
+    position: absolute;
+    bottom:15%;
+    left:168px;
+}
+
+.blue {
+    color: #1976d2; /* Modrá */
+    font-size: 2vw;
+    font-size: 29px;
+    font-weight: bold;
+    position: absolute;
+    bottom:15%;
+    left:150px;
+}
+
+@media (max-width: 768px) {
+    .container-activities {
+        width: 90vw;
+        padding: 4vw;
+    }
+
+    .checkup, .video, .images {
+        position: static;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #141414;
+    }
+
+    .yellow, .pink, .blue {
+        font-size: 4vw;
+        position: static;
+        display: block;
+        margin: 5px auto;
+    }
+
+    .activities-text {
+        position: static;
+        display: block;
+        text-align: center;
+        margin-top: 5px;
+        font-size: 1.2rem;
+    }
+
+    .checkup-icon, .video-icon, .images-icon {
+        width: 8vw;
+        max-width: 30px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-activities {
+        width: 95vw;
+        padding: 5vw;
+    }
+
+    .yellow, .pink, .blue {
+        font-size: 5vw;
+    }
+
+    .activities-text {
+        font-size: 1rem;
+    }
+
+    .checkup-icon, .video-icon, .images-icon {
+        width: 6vw;
+        max-width: 25px;
+    }
+}

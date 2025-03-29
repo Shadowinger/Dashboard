@@ -10,9 +10,9 @@
 }
 
 .container-activities {
-    position: fixed;
+    position: absolute;
     left: 35%;
-    top: 7.6vh;
+    top: 7vh;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
@@ -20,14 +20,13 @@
     align-items: center;
     background-color: #222;
     color: white;
-    padding: 1vw;
+    padding: 1.5vw;
     border-radius: 0.6vw;
-    width: 20vw;
-    min-width: 180px;
-    height: 12.5vw;
-    max-width: 12.5vw;
-    min-height: 11.3vw;
-    margin: 0px;
+    width: clamp(15vw);
+    min-width: 200px;
+    height: auto;
+    max-width: 30vw;
+    min-height: 150px;
 }
 
 .text-checkup {

@@ -149,5 +149,119 @@
     "Saved":{
         "labels":["vyšetreni", "videozáznamy", "snímky" ],
         "values":[7, 12, 130]
-    }
+    },
+    "Users": [
+        {
+            "id": 1,
+            "lastName": "KRATOCHVÍL",
+            "firstName": "Jaroslav",
+            "phone": "123456789",
+            "status": "available",
+            "role": "Lékař"
+        },
+        {
+            "id": 2,
+            "lastName": "MOUDRÁ",
+            "firstName": "Anna",
+            "phone": "234567890",
+            "status": "busy",
+            "role": "Sestra"
+        },
+        {
+            "id": 3,
+            "lastName": "VÍT",
+            "firstName": "Petr",
+            "phone": "345678901",
+            "status": "available",
+            "role": "Lékař"
+        },
+        {
+            "id": 4,
+            "lastName": "ŠPITÁLSKÝ",
+            "firstName": "Martin",
+            "phone": "456789012",
+            "status": "away",
+            "role": "Technik"
+        },
+        {
+            "id": 5,
+            "lastName": "STUDENÁ",
+            "firstName": "Petra",
+            "phone": "567890123",
+            "status": "available",
+            "role": "Sestra"
+        },
+        {
+            "id": 6,
+            "lastName": "HIGGS VÝBORNÁ",
+            "firstName": "Markéta",
+            "phone": "678901234",
+            "status": "busy",
+            "role": "Lékař"
+        },
+        {
+            "id": 7,
+            "lastName": "MALÝ",
+            "firstName": "Jan",
+            "phone": "789012345",
+            "status": "available",
+            "role": "Technik"
+        },
+        {
+            "id": 8,
+            "lastName": "TÁBORSKÁ",
+            "firstName": "Kateřina",
+            "phone": "890123456",
+            "status": "available",
+            "role": "Lékař"
+        },
+        {
+            "id": 9,
+            "lastName": "HRNČÍŘ",
+            "firstName": "Martin",
+            "phone": "901234567",
+            "status": "away",
+            "role": "Technik"
+        },
+        {
+            "id": 10,
+            "lastName": "KRÁTKÁ",
+            "firstName": "Alžběta",
+            "phone": "012345678",
+            "status": "available",
+            "role": "Sestra"
+        },
+        {
+            "id": 11,
+            "lastName": "DUDÁČEK ŠŤASTNÁ",
+            "firstName": "Tereza",
+            "phone": "112233445",
+            "status": "busy",
+            "role": "Lékař"
+        },
+        {
+            "id": 12,
+            "lastName": "SÁL",
+            "firstName": "1",
+            "phone": "223344556",
+            "status": "available",
+            "role": "Místnost"
+        },
+        {
+            "id": 13,
+            "lastName": "CONF",
+            "firstName": "MODRÝ",
+            "phone": "334455667",
+            "status": "available",
+            "role": "Místnost"
+        },
+        {
+            "id": 14,
+            "lastName": "RECEPCE",
+            "firstName": "",
+            "phone": "445566778",
+            "status": "available",
+            "role": "Recepce"
+        }
+    ]
 }

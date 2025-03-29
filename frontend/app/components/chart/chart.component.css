@@ -1,72 +1,147 @@
-
 .chart-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 280px;
-    height: 200px; 
-    background: #1e1e1e; 
-    border-radius: 10px;
-    padding: 20px;
-    position: fixed;
-    top: 60px;
-    left:120px;
- 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 17vw;
+  height: 25vh; 
+  background: #1e1e1e; 
+  border-radius: 10px;
+  padding: 20px;
+  position: fixed;
+  top: 60px;
+  left: 120px;
+}
+
+.chart-numbers {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.gray {
+  color: rgb(65, 65, 65); 
+  position: absolute;
+  bottom: 20%;
+  left: 7%; 
+}
+
+.pink {
+  color: #e91e63;
+  position: absolute;
+  bottom: 8%;
+  left: 17%; 
+}
+
+.separator-6 {
+  width: 28%; 
+  height: 3px; 
+  background-color: rgb(0, 0, 0); 
+  transform: rotate(135deg); 
+  position: absolute;
+  bottom: 20%;
+  left: 1%;
+}
+
+.planned-text {
+  position: absolute;
+  top: 0%;
+  left: 5%;
+  width: 200px;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+app-chart {
+  display: none;
+}
+
+canvas {
+  position: absolute;
+  right: 0%;
+  top: 15%;
+  width: 10vw;
+  height: 10vw;
+  max-width: 300px;
+  max-height: 300px;
+  min-width: 100px;
+  min-height: 100px;
   }
+
+/* Mobile responsiveness for screens up to 768px */
+@media screen and (max-width: 768px) {
+  .chart-container {
+    width: 85vw;
+    height: 50vh;
+    max-height: 250px;
+    position: absolute;
+    top: 1300px;
+    left: 3vw;
+    margin: 0 auto;
+    padding: 3vw;
+  
+  }
+
   .chart-numbers {
-
-    font-size: 32px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
+    font-size: 6vw;
   }
-  
+
   .gray {
-    color: rgb(65, 65, 65); 
-    position: absolute;
-    bottom: 20%;
-    left:7%; 
+    bottom: 18%;
+    left: 5%;
   }
-  
+
   .pink {
-    color: #e91e63;
-    position: absolute;
-    bottom: 8%;
-    left: 17%; 
+    bottom: 6%;
+    left: 15%;
+  }
 
+  .separator-6 {
+    width: 25%;
+    height: 2px;
+    bottom: 18%;
+    left: 0;
   }
-  .separator-6{
-    width: 28%; /* Délka čáry */
-    height: 3px; /* Tloušťka čáry */
-    background-color: rgb(0, 0, 0); /* Barva čáry */
-    transform: rotate(135deg); /* Sklon */
-    position: absolute;
-    bottom:20%;
-    left:1%;
-  }
-  .planned-text{
-    position:absolute;
-    top:0%;
-    left:5%;
-    width: 200px;
-    color: white;
-    font-size: 14px;  /* Make text larger */
-    font-weight: normal;  /* Make it bold */
-    text-transform: uppercase;  /* Make it all caps if needed */
 
+  .planned-text {
+    font-size: 3vw;
+    width: 80%;
+    top: 2%;
+    left: 4%;
+  }
 
-  }
-  
-  app-chart {
-    display: none;
-  }
   canvas {
-    position: absolute;
-    right: 0%;
-    top:15%;
-    width: 10%;
-    height: auto;
-
-
+    width: 30vh !important;
+    height: 30vh !important;
 
   }
+  @media screen and (orientation: landscape) {
+    canvas {
+      width: 25vw !important;
+      height: 25vw !important;
+    }
+    .separator-6 {
+      width: 20%;
+      height: 2px;
+      bottom: 28%;
+      left: 0;
+    }
+    .gray {
+      bottom: 29%;
+      left: 5%;
+    }
+  
+    .pink {
+      bottom: 6%;
+      left: 12%;
+    }
+    .chart-container{
+      position: absolute;
+      top: 1150px;
+      left: 3vw;
+    }
+
+  }
+}

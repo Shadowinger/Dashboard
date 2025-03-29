@@ -1,57 +1,66 @@
-import { Component, OnInit } from "@angular/core";
-import { UserService } from '../../services/user.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+interface User {
+  id?: number;
+  lastName?: string;
+  firstName?: string;
+  status?: string;
+  phone?: string;
+}
 
 @Component({
-  standalone: true,  
-  selector: "app-user-list",
-  templateUrl: "./user-list.component.html",
-  styleUrls: ["./user-list.component.css"],
+  standalone: true,
+  selector: 'app-user-list',
+  templateUrl: './user-list.component.html',
+  styleUrls: ['./user-list.component.css']
 })
-export class UserListComponent implements OnInit {
-  users: any[] = []; // Pole uživatelů
-  newUser = { name: "", phone: "" }; // Nový uživatel
-  showPopup = false; // Stav popup okna
+export class UserListComponent implements OnInit, OnDestroy {
+  users: User[] = [];
+  private dataInterval: any;
 
-  constructor(private userService: UserService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.loadUsers(); // Načtení uživatelů při spuštění komponenty
-    console.log("UserListComponent byl inicializován!");
+    this.fetchData();
+    this.dataInterval = setInterval(() => {
+      this.fetchData();
+    }, 5000);
   }
 
-  // Načtení uživatelů z backendu
-  loadUsers() {
-    this.userService.getUsers().subscribe((data) => {
-      console.log("nacteni", data);  
-      this.users = data;
+  fetchData() {
+    this.http.get<{ Users: User[] }>('assets/data.json').subscribe({
+      next: data => {
+        if (data.Users && Array.isArray(data.Users)) {
+          this.users = data.Users.map(user => ({
+            id: user.id ?? null,
+            lastName: user.lastName || 'Neznámý',
+            firstName: user.firstName || '',
+            status: user.status || 'unknown',
+            phone: user.phone || 'Telefon není k dispozici'
+          }));
+        } else {
+          console.error('Invalid data format:', data);
+          this.setDefaultUsers();
+        }
+        console.log(this.users);
+      },
+      error: err => {
+        console.error('Failed to load user data:', err);
+        this.setDefaultUsers();
+      }
     });
   }
 
-  // Přidání uživatele
-  addUser() {
-    if (!this.newUser.name || !this.newUser.phone) return;
-
-    this.userService.addUser(this.newUser.name, this.newUser.phone).subscribe(() => {
-      this.loadUsers();
-      this.newUser = { name: "", phone: "" };
-      this.showPopup = false; // Zavře popup po přidání uživatele
-    });
+  setDefaultUsers() {
+    this.users = [
+      { id: 0, lastName: 'Neznámý', firstName: '', status: 'unknown', phone: 'Telefon není k dispozici' }
+    ];
   }
 
-  // Odstranění uživatele
-  removeUser(id: number) {
-    this.userService.removeUser(id).subscribe(() => {
-      this.loadUsers();
-    });
-  }
-
-  // Otevření popupu
-  openPopup() {
-    this.showPopup = true;
-  }
-
-  // Zavření popupu
-  closePopup() {
-    this.showPopup = false;
+  ngOnDestroy() {
+    if (this.dataInterval) {
+      clearInterval(this.dataInterval);
+    }
   }
 }

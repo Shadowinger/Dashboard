@@ -1,225 +1,407 @@
-.container{
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Sidebar Styles */
+.container {
     position: fixed;
-    left: 25px;
+    left: 0;
     top: 0;
-    width: 80px; /* Adjust width as needed */
+    width: 4.76vw;
     height: 100vh;
-    background-color: #222;/* Dark background */
+    background-color: #222;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px; /* Space between items */
+    gap: 30px;
+    z-index: 10;
+    transition: width 0.3s ease;
 }
-
 
 .item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: #aaa; /* Light gray text */
+    color: #aaa;
     font-size: 14px;
-    transition: 0.3s ease-in-out;
-
-}
-.own-playlists{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    gap: 8px;
-    color: #aaa; /* Light gray text */
-    font-size: 14px;
-    transition: 0.3s ease-in-out;
-    text-decoration: underline;
-    position: fixed;
-    top:285px;
-    right:270px;
-    cursor: pointer;
-    padding-top: 8px; /* Odstup od textu */
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
 }
 
+.item:hover {
+    background-color: #2a2a2a;
+    color: #fff;
+}
 
+/* Playlist Icons */
+.playlist-icon {
+    width: 2.38vw;
+    height: 2.38vw;
+    filter: grayscale(28%) brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.2s;
+    margin-bottom: 5px;
+}
+
+.item:hover .playlist-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.item:active .playlist-icon {
+    opacity: 0.5;
+}
+
+/* Main Content Container */
 .container2 {
-    position: fixed;
-    right:25px;
-    top:60px;
-    display: flex;  
-    flex-direction: row;  /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center;  /* Center items horizontally */
-    background-color: #222;  /* Dark background */
+    position: absolute;
+    right: 25px;
+    top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
     color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 480px;  /* Adjust width */
-    height: 250px; /* Adjust height */
-    margin: 0px;  /* Space from other elements */
+    min-width: 31vw;
+    height: 18vw;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+/* Buttons Styles */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 5px;
+}
+
+.watch-later-button {
+    background-color: #191818;
+    text-transform: uppercase;
+    color: rgb(212, 212, 212);
+    border: none;
+    align-items: center;
+    gap: 20px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    top: 2vw;
+    right: 1.2vw;
+    height: 10.3vw;
+    width: 9vw;
+    font-size: 0.6rem;
+    transition: opacity, 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.shared-button {
+    background-color: #191818;
+    text-transform: uppercase;
+    color: rgb(212, 212, 212);
+    border: none;
+    align-items: center;
+    gap: 20px;
+    background: #111;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    top: 2vw;
+    right: 11vw;
+    height: 10.3vw;
+    width: 9vw;
+    font-size: 0.6rem;
+    transition: opacity, 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
 }
 
 .last-played-button {
     background-color: #191818;
     text-transform: uppercase;
-    color: rgb(212, 212, 212) ;
-    border:none;    
+    color: rgb(212, 212, 212);
+    border: none;
     align-items: center;
-    padding: 10px;
-    gap:10px;   
+    gap: 1.2vw;
     background: #111;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     cursor: pointer;
     transition: 0.3s;
-    position: fixed;
-    right:377px;
-    top: 80px;
-    height: 170px;
-    width:150px;
+    position: absolute;
+    top: 2vw;
+    font-size: 0.6rem;
+    height: 10.3vw;
+    width: 9vw;
     transition: opacity, 0.3s;
-}
-.last-played-button:active{
-    opacity: 0.75;
-}
-    
-.shared-button {
-    background-color: #191818;
-    text-transform: uppercase;
-    color: rgb(212, 212, 212) ;
-    border:none;    
-    align-items: center;
-    padding: 10px;
-    gap:10px;   
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-    position: fixed;
-    right: 209px;
-    top: 80px;
-    height: 170px;
-    width:150px;
-    transition: opacity, 0.3s;
 }
-.shared-button:active{
+
+.last-played-button:hover,
+.shared-button:hover,
+.watch-later-button:hover {
+    background-color: #2a2a2a;
+}
+
+.last-played-button:active,
+.shared-button:active,
+.watch-later-button:active {
     opacity: 0.75;
-}
-.watch-later-button{
-    
-    background-color: #191818;
-    text-transform: uppercase;
-    color: rgb(212, 212, 212) ;
-    border:none;    
-    align-items: center;
-    padding: 10px;
-    gap:20px;   
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-    position: fixed;
-    right: 41px;
-    top: 80px;
-    height: 170px;
-    width:150px;
-    transition: opacity, 0.3s;
+    transform: scale(0.98);
 }
 
-.watch-later-button:active{
-    opacity: 0.75;
-}
-
-
-
-
-
-
-.playlist-icon{
-    width: 40px;
-    height: 40px;
-    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
-    opacity: 0.7; /* Adjust transparency */
-    transition: opacity, 0.3s;
-    
-}
-.playlist-icon:active{
-    opacity: 0.5;
+/* Button Icons */
+.playlist-icon-right-middle,
+.playlist-icon-right-later {
+    width: 5.95vw;
+    height: 5.95vw;
+    max-width: 5.95vw;
+    filter: grayscale(28%) brightness(0) invert(1);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    margin-bottom: 5px;
 }
 .playlist-icon-right{
-    width: 100px;
-    height: 100px;
-    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
-    opacity: 0.7; /* Adjust transparency */
-    transition: opacity, 0.3s;
-    width: 100%; /* Aby čára byla přes celý prvek */
-    
+    width: 7.95vw;
+    height: 7.95vw;
+    max-width: 7.95vw;
+    filter: grayscale(28%) brightness(0) invert(1);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    margin-bottom: 5px;
+    position: absolute;
+    top:10%;
 }
 
-.playlist-icon-right:active{
-    opacity:0.5;
-
-}
-.playlist-icon-right-middle{
-    width: 80px;
-    height: 80px;
-    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
-    opacity: 0.7; /* Adjust transparency */
-    margin-bottom: 19px;
-    transition: opacity, 0.3s;
-    width: 100%; /* Aby čára byla přes celý prvek */
-}
-.playlist-icon-right-middle:active{
-    opacity:0.5;
-
+.last-played-button:hover .playlist-icon-right,
+.shared-button:hover .playlist-icon-right-middle,
+.watch-later-button:hover .playlist-icon-right-later {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
-.playlist-icon-right-later{
-    width: 80px;
-    height: 80px;
-    filter: grayscale(28%) brightness(0) invert(1); /* Convert to gray */
-    opacity: 0.7; /* Adjust transparency */
-    margin-bottom: 19px;
-    padding-bottom: 8px; /* Odstup od textu */
-    width: 100%; /* Aby čára byla přes celý prvek */
-}
-.playlist-icon-right-later:active{
-    opacity:0.5;
-    transition: opacity, 0.3s;
-
-}
-
-.header{
-    font-size: 24px;  /* Make text larger */
-    font-weight: normal;  /* Make it bold */
-    text-transform: uppercase;  /* Make it all caps if needed */
-    display: inline-block;  /* Prevents unwanted effects from scaling */
-    letter-spacing: 3px;
+/* Own Playlists */
+.own-playlists {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    gap: 8px;
+    color: #aaa;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: underline;
     position: fixed;
-    right:385px;
+    top: 16.96vw;
+    right: 15.8vw;
+    cursor: pointer;
+    padding-top: 8px;
+    width:16vw;
+}
+
+
+.own-playlists:hover {
+    color: #fff;
+}
+
+/* Separators */
+.separator,
+.separator2 {
+    background-color: #272727;
+    position: fixed;
 }
 
 .separator {
     width: 2px;
-    background-color: #272727;
-    position:fixed;
-    right: 560px;
-    top: 20px;
-    bottom: 10px;
+    right: 33.33vw;
+    top: 1.2vw;
+    bottom: 1vw;
 }
-.separator2{
-    height:2px;
-    width: 470px;
-    position: fixed;
-    top:280px;
-    right: 50px;
-    
+
+.separator2 {
+    height: 2px;
+    width: 28vw;
+    top: 17vw;
+    right: 2.98vw;
     background-color: #000000;
+}
 
+/* Header */
+.header {
+    position: absolute;
+    top: 20px;
+    right: 22.93vw;
+    font-size: 1.43vw;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 
 }
 
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 20px;
+        visibility: hidden;
+    }
+
+    .container2 {
+        position: absolute;
+        top: 950px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 95vw;
+        height: 300px;
+    }
+
+    .buttons {
+        flex-direction: row;
+        gap: 5px;
+        width:100vw;
+        height: 30vw;
+    }
+
+    .watch-later-button {
+        width: 25vw;
+        height: 20vh;
+        transform: translateX(-50%);
+        position: fixed;
+        right:-11%;
+        align-items: center; /* Posune text dolů */
+
+    }
+    .shared-button{
+        width: 25vw;
+        height: 20vh;
+        transform: translateX(-50%);
+        position: fixed;
+        left:47%;  
+        justify-content: center; /* Posune text dolů */
+
+    }
+    .last-played-button{
+        width: 25vw;
+        height: 20vh;
+        transform: translateX(-50%);
+        position: fixed;
+        left:15%;
+        justify-content: center; /* Posune text dolů */
+
+    }
+
+    .header {
+        position: absolute;
+        top:910px;
+        left:30px;
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .separator2 {
+        position: absolute;
+        top: 200px;
+        left:30px;
+        width: calc(100% - 70px);
+    }
+
+    .own-playlists {
+        position: absolute;
+        bottom: 5px;
+        left:10px;
+        margin: 10px ;
+        text-align: center;
+        right: auto;
+        top: auto;
+        width: 80vw;
+    }
+
+    .playlist-icon {
+        width: 30px;
+        height: 30px;
+
+    }
+    .playlist-icon-right-middle,
+    .playlist-icon-right-later,
+    .playlist-icon-right {
+        width: 70px;
+        height:100px;
+        max-width: 70px;
+        position: fixed;
+        top:5%;
+        margin-bottom: 0;
+        align-self: center;
+    }
+
+    .item {
+        font-size: 12px;
+    }
+    @media screen and (orientation: landscape) {
+        .container2 {
+            position: absolute;
+            top: 770px; /* Uprav tuto hodnotu podle potřeby */
+        }
+        .header{
+            position: absolute;
+            top:720px;
+            left: 40px;
+        }
+        .shared-button,
+        .watch-later-button,
+        .last-played-button{
+            height:20vw;
+            width: 27vw;
+            text-align: end;
+        }
+
+        .playlist-icon-right-later,
+        .playlist-icon-right-middle{
+            position: fixed;
+            top:1vh;
+        }
+        .playlist-icon-right{
+            position: fixed;
+            top:2vh;
+        }
+
+    }
+}
+
+
+
+/* Accessibility and Performance Enhancements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

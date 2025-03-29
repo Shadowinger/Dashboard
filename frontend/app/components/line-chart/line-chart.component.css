@@ -1,7 +1,7 @@
 
 .chart-container {
     position: fixed;
-    right:25px;
+    right:30px;
     top: 430px;
     display: flex;  
     flex-direction: column;  /* Stack items vertically */
@@ -11,8 +11,8 @@
     color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 480px;  /* Adjust width */
-    height: 300px; /* Adjust height */
+    width: 28vw;  /* Adjust width */
+    height: 18vw; /* Adjust height */
     margin: 0px;  /* Space from other elements */
 }
 .active{

@@ -11,13 +11,15 @@ import { LineChartComponent } from 'app/components/line-chart/line-chart.compone
 import { Chart } from 'chart.js';
 import { AfterViewInit } from "@angular/core";
 import { TableComponent } from 'app/components/table/table.component';
+import { DateDisplayComponent } from 'app/components/date/date.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'users', component: UserListComponent },
   { path: 'user-form', component: UserFormComponent },
   { path: 'line-chart', component: LineChartComponent },
-  { path: 'table', component: TableComponent }
+  { path: 'table', component: TableComponent },
+  { path: "date", component: DateDisplayComponent}
 ];
 
 bootstrapApplication(AppComponent, {

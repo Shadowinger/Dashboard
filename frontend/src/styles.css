@@ -4,8 +4,11 @@ body {
     margin: 0; /* Removes default margins */
     padding: 0; /* Removes default padding */
     height: 100vh; /* Makes sure it covers the full viewport */
-    overflow: hidden;
+    overflow-x:hidden;
 
+}
+html{
+    overflow-x: hidden;
 }
 * {
     font-family: Calibri, sans-serif;

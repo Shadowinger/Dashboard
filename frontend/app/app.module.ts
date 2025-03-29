@@ -11,15 +11,16 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { ChartComponent } from './components/chart/chart.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 import { TableComponent } from './components/table/table.component';
+import { DateDisplayComponent } from './components/date/date.component';
 
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'users', component: UserListComponent },
-  { path: "", component: UserFormComponent},
-  { path: "", component: ChartComponent},
-  { path: "", component: LineChartComponent},
-  { path: "", component: TableComponent }
+  { path: 'user-form', component: UserFormComponent },
+  { path: 'line-chart', component: LineChartComponent },
+  { path: 'table', component: TableComponent },
+  { path: "date", component: DateDisplayComponent}
 ];
 
 @NgModule({
@@ -33,7 +34,8 @@ const routes: Routes = [
     UserFormComponent,
     ChartComponent,
     LineChartComponent,
-    TableComponent
+    TableComponent,
+    DateDisplayComponent
     
   ],
   providers: [

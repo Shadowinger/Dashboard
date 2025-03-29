@@ -147,7 +147,7 @@
 
     ],
     "Saved":{
-        "labels":["vysetreni", "videozaznamy", "snimky" ],
-        "values":[7, 12, 140]
+        "labels":["vyšetreni", "videozáznamy", "snímky" ],
+        "values":[7, 12, 130]
     }
 }

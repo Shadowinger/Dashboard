@@ -11,7 +11,7 @@
     text-transform: uppercase;
 
     @media screen and (max-width: 768px) {
-        top: 300px;
+        top: 420px;
         right: 10px;
         left: auto;
         font-size: 1rem;

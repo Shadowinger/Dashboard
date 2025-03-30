@@ -3,13 +3,13 @@
   justify-content: center;
   align-items: center;
   width: 17vw;
-  height: 25vh; 
+  height: 26.5vh; 
   background: #1e1e1e; 
   border-radius: 10px;
   padding: 20px;
-  position: fixed;
-  top: 60px;
-  left: 120px;
+  position: absolute;
+  top: 3.8vw;
+  left: 7.27vw;
 }
 
 .chart-numbers {
@@ -73,11 +73,11 @@ canvas {
 /* Mobile responsiveness for screens up to 768px */
 @media screen and (max-width: 768px) {
   .chart-container {
-    width: 85vw;
+    width: 88vw;
     height: 50vh;
     max-height: 250px;
     position: absolute;
-    top: 1300px;
+    top: 1370px;
     left: 3vw;
     margin: 0 auto;
     padding: 3vw;
@@ -139,7 +139,8 @@ canvas {
     }
     .chart-container{
       position: absolute;
-      top: 1150px;
+      width: 88vw;
+      top: 1230px;
       left: 3vw;
     }
 

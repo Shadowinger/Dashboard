@@ -1,8 +1,8 @@
 
 .chart-container {
-    position: fixed;
-    right:30px;
-    top: 430px;
+    position: absolute;
+    right:1.7vw;
+    top: 53vh;
     display: flex;  
     flex-direction: column;  /* Stack items vertically */
     justify-content: center; /* Center items vertically */
@@ -10,6 +10,7 @@
     background-color: #222;  /* Dark background */
     color: white;
     padding: 20px;
+    padding-top: 10px;
     border-radius: 10px;
     width: 28vw;  /* Adjust width */
     height: 18vw; /* Adjust height */
@@ -28,7 +29,7 @@
 
 .separator4{
     position: absolute;
-    top: 89%;
+    bottom:11%;
     width: 90%;
     background-color: #000000;
     height:2px;
@@ -75,6 +76,64 @@ canvas {
     position: absolute;
     top:28%;
 }
+
+@media (max-width: 768px) {
+    .chart-container{
+        top:2480px;
+        left:5%;
+        width: 80vw;
+        height:40vh;
+
+
+    }
+    .statistics{
+        top:2430px;
+        left:7%;
+    }
+    canvas {
+        width: 90vw !important;
+        height: 37vh !important;
+        top:18%;
+
+
+    }
+    .active{
+        top:3%;
+    }
+    .separator4{
+        bottom:13%;
+    }
+    @media screen and (orientation: landscape){
+        canvas{
+            width: 80vw !important;
+            height:80vh !important;
+            top:17%;
+
+        }
+        .statistics{
+            top: 1910px;
+            left:7%;
+
+        }
+        .chart-container{
+            top:1980px;
+            left:5%;
+            width: 80vw;
+            height:90vh;
+    
+        }
+        .separator4{
+            bottom:10%;
+        }
+        .activities-hospital{
+            top:3%;
+        }
+        .separator5{
+            top:7%;
+        }
+    }
+    
+}   
 
 
 

@@ -1,50 +1,36 @@
-<div class="user-table-container">
-    <h1>UŽIVATELÉ</h1>
-
-    <div *ngIf="users.length > 0; else noUsers">
-        <table class="user-table">
-            <thead>
-                <tr>
-                    <th>Jméno</th>
-                    <th>Status</th>
-                    <th>Telefon</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let user of users">
-                    <td>
-                        <ng-container *ngIf="user.lastName || user.firstName; else unknownUser">
-                            <span *ngIf="user.lastName">{{ user.lastName }}</span>
-                            <span *ngIf="user.firstName">{{ user.firstName }}</span>
-                        </ng-container>
-                        <ng-template #unknownUser>
-                            <span>Neznámý uživatel</span>
-                        </ng-template>
-                    </td>
-                    <td class="user-status" [ngClass]="'status-' + (user.status || 'unknown')">
-                        {{ user.status ? user.status : 'Neznámý stav' }}
-                    </td>
-                    <td>
-                        <ng-container *ngIf="user.phone; else noPhone">
-                            <a class="call-button" [href]="'tel:' + user.phone">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                                {{ user.phone }}
-                            </a>
-                        </ng-container>
-                        <ng-template #noPhone>
-                            <span class="no-phone">Telefon není k dispozici</span>
-                        </ng-template>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <ng-template #noUsers>
-        <div class="no-users">
-            Žádní uživatelé k zobrazení
-        </div>
-    </ng-template>
-</div>
+<h1 class="users-text">UŽIVATELÉ</h1>
+<div class="separator-4"></div>
+<div class="users-container">
+    
+    <table class="users-table">
+      <tbody>
+        <tr *ngFor="let user of users" class="user-row">
+          <td class="status-cell">
+            <span class="status-indicator" [ngClass]="getStatusClass(user.status)"></span>
+          </td>
+          
+          <td class="avatar-cell">
+            <div class="user-avatar">
+              <img *ngIf="user.avatar" [src]="user.avatar" alt="User avatar">
+              <div *ngIf="!user.avatar" class="default-avatar">
+                <span class="avatar-icon">{{getInitials(user)}}</span>
+              </div>
+            </div>
+          </td>
+          
+          <td class="name-cell">
+            <span class="lastname">{{user.lastName}}</span>
+            <span *ngIf="user.firstName" class="firstname">{{user.firstName}}</span>
+          </td>
+          
+          <td class="call-cell">
+            <a class="call-button" [href]="'tel:' + user.phone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -12,7 +12,7 @@
 .container-activities {
     position: absolute;
     left: 35%;
-    top: 7vh;
+    top: 7.5vh;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
@@ -78,15 +78,16 @@
 @media (max-width: 768px) {
     .todays-checkups{
         margin-bottom: 10px;
+        top:110px
     }
     .container-activities {
-        max-width: 80vw;
-        width: 80vw;
+        max-width: 81vw;
+        width: 81vw;
         height: 180px;
         max-height: none;
         padding: 30px;
         position: absolute;
-        top: 60px;
+        top: 170px;
         left: 50%;
         border-radius: 10px;
     }

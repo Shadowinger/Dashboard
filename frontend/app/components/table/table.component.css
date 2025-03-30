@@ -45,7 +45,7 @@ app-table{
 }
 
 .meetings-title {
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 700;
     font-size: 22px;  /* Make text larger */
     font-weight: normal;  /* Make it bold */
@@ -151,10 +151,12 @@ app-table{
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
     .app-container {
-        width: 95vw;
+        width: 100vw;
         height: 100%;
+        max-width: 100vw;
         position: absolute;
-        top: 360px;
+        max-height: 450px;
+        top: 470px;
         left: 50%;
         transform: translateX(-50%);
     }

@@ -4,12 +4,10 @@ body {
     margin: 0; /* Removes default margins */
     padding: 0; /* Removes default padding */
     height: 100vh; /* Makes sure it covers the full viewport */
-    overflow-x:hidden;
+    overflow:hidden;
 
 }
-html{
-    overflow-x: hidden;
-}
+
 * {
     font-family: Calibri, sans-serif;
 }
@@ -19,4 +17,9 @@ app-chart {
     height: 0;
 
   }
-
+@media (max-width: 768px) {
+    body{
+        overflow: scroll;
+    }
+    
+}

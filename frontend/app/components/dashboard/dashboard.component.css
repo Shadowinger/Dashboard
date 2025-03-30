@@ -8,7 +8,7 @@
 
 /* Sidebar Styles */
 .container {
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
     width: 4.76vw;
@@ -264,13 +264,23 @@
 
 @media screen and (max-width: 768px) {
     .container {
-        width: 20px;
-        visibility: hidden;
+        top: 0px;
+        width:100vw;
+        height: 12vh;
+        align-items: center;
+        flex-direction: row;
+
     }
+    .item{
+        padding-top: 10px;
+        padding-bottom: 0px;
+        margin-bottom: 20px;
+    }
+
 
     .container2 {
         position: absolute;
-        top: 950px;
+        top: 1000px;
         left: 50%;
         transform: translateX(-50%);
         width: 95vw;
@@ -314,7 +324,7 @@
 
     .header {
         position: absolute;
-        top:910px;
+        top:960px;
         left:30px;
         font-size: 1.5rem;
         margin: 0;
@@ -365,11 +375,17 @@
     @media screen and (orientation: landscape) {
         .container2 {
             position: absolute;
-            top: 770px; /* Uprav tuto hodnotu podle potřeby */
+            top: 880px; /* Uprav tuto hodnotu podle potřeby */
+        }
+        .container{
+            height: 23vh;
+            width: 100vw;
+            padding-bottom: 0;
+            margin-bottom: 30;
         }
         .header{
             position: absolute;
-            top:720px;
+            top:830px;
             left: 40px;
         }
         .shared-button,

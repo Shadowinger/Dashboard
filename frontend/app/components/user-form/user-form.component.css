@@ -1,5 +1,5 @@
 .todays-checkups {
-    font-size: 1.375rem;
+    font-size: 1.43vw;
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -20,11 +20,11 @@
     align-items: center;
     background-color: #222;
     color: white;
-    padding: 1.5vw;
+    padding:2.5vh;
+    
     border-radius: 0.6vw;
-    width: clamp(15vw);
-    min-width: 200px;
-    height: auto;
+    width: 13vw;
+    height: 25vh;
     max-width: 30vw;
     min-height: 150px;
 }
@@ -78,6 +78,7 @@
 @media (max-width: 768px) {
     .todays-checkups{
         margin-bottom: 10px;
+        font-size: 24px;
         top:110px
     }
     .container-activities {

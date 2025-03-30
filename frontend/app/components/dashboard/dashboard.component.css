@@ -10,7 +10,7 @@
 .container {
     position: absolute;
     left: 0;
-    top: 0;
+    top: 1;
     width: 4.76vw;
     height: 100vh;
     background-color: #222;
@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     z-index: 10;
-    transition: width 0.3s ease;
+    transition: width 0.1s ease;
 }
 
 .item {
@@ -72,7 +72,7 @@
     padding: 20px;
     border-radius: 10px;
     min-width: 31vw;
-    height: 18vw;
+    height: 35vh;
     margin: 0;
     transition: all 0.3s ease;
 }
@@ -100,7 +100,7 @@
     position: absolute;
     top: 2vw;
     right: 1.2vw;
-    height: 10.3vw;
+    height: 21vh;
     width: 9vw;
     font-size: 0.6rem;
     transition: opacity, 0.3s;
@@ -124,8 +124,8 @@
     transition: 0.3s;
     position: absolute;
     top: 2vw;
-    right: 11vw;
-    height: 10.3vw;
+    right: 10.8vw;
+    height: 21vh;
     width: 9vw;
     font-size: 0.6rem;
     transition: opacity, 0.3s;
@@ -150,7 +150,7 @@
     position: absolute;
     top: 2vw;
     font-size: 0.6rem;
-    height: 10.3vw;
+    height: 21vh;
     width: 9vw;
     transition: opacity, 0.3s;
     display: flex;
@@ -176,7 +176,7 @@
 .playlist-icon-right-middle,
 .playlist-icon-right-later {
     width: 5.95vw;
-    height: 5.95vw;
+    height: 15vh;
     max-width: 5.95vw;
     filter: grayscale(28%) brightness(0) invert(1);
     opacity: 0.7;
@@ -185,7 +185,7 @@
 }
 .playlist-icon-right{
     width: 7.95vw;
-    height: 7.95vw;
+    height: 17vh;
     max-width: 7.95vw;
     filter: grayscale(28%) brightness(0) invert(1);
     opacity: 0.7;
@@ -214,7 +214,7 @@
     transition: all 0.3s ease-in-out;
     text-decoration: underline;
     position: fixed;
-    top: 16.96vw;
+    top: 35vh;
     right: 15.8vw;
     cursor: pointer;
     padding-top: 8px;
@@ -243,7 +243,7 @@
 .separator2 {
     height: 2px;
     width: 28vw;
-    top: 17vw;
+    top: 35vh;
     right: 2.98vw;
     background-color: #000000;
 }
@@ -326,7 +326,7 @@
         position: absolute;
         top:960px;
         left:30px;
-        font-size: 1.5rem;
+        font-size: 24px;
         margin: 0;
     }
 
@@ -387,6 +387,7 @@
             position: absolute;
             top:830px;
             left: 40px;
+    
         }
         .shared-button,
         .watch-later-button,

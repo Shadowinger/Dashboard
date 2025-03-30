@@ -14,7 +14,7 @@ app-table{
 
 .app-container {
     width: 37.2vw;
-    height: 29vw;
+    height: 60vh;
     background-color: var(--bg-primary);
     display: flex;
     justify-content: center;
@@ -45,7 +45,7 @@ app-table{
 }
 
 .meetings-title {
-    font-size: 22px;
+    font-size: 1.43vw;
     font-weight: 700;
     font-size: 22px;  /* Make text larger */
     font-weight: normal;  /* Make it bold */
@@ -166,4 +166,5 @@ app-table{
         height: 100%;
         border-radius: 0;
     }
+
 }

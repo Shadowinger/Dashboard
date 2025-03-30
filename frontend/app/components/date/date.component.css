@@ -1,7 +1,7 @@
 .date-display {
     position: absolute;
     top: 0%;
-    left: 30%;
+    left: 30vw;
     margin: 10px;
     margin-top: 20px; /* Adjust to position below the "DNEŠNÍ VYŠETŘENÍ" text */
     font-size: 0.9rem;

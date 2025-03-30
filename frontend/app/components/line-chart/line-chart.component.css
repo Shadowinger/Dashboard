@@ -13,7 +13,7 @@
     padding-top: 10px;
     border-radius: 10px;
     width: 28vw;  /* Adjust width */
-    height: 18vw; /* Adjust height */
+    height: 40vh; /* Adjust height */
     margin: 0px;  /* Space from other elements */
 }
 .active{
@@ -61,25 +61,25 @@
     opacity: 0.6;
 }
 .statistics{
-    font-size: 24px;  /* Make text larger */
+    font-size: 1.43vw;  /* Make text larger */
     font-weight: normal;  /* Make it bold */
     text-transform: uppercase;  /* Make it all caps if needed */
     display: inline-block;  /* Prevents unwanted effects from scaling */
     letter-spacing: 3px;
     position: absolute;
     top:45%;
-    right:22.5%;
+    right: 21.7%;
 }
 canvas {
-    width: 35%;
-    height: 40%;
+    width: 30vw !important;
+    height: 30vh !important;
     position: absolute;
     top:28%;
 }
 
 @media (max-width: 768px) {
     .chart-container{
-        top:2480px;
+        top:2620px;
         left:5%;
         width: 80vw;
         height:40vh;
@@ -87,8 +87,9 @@ canvas {
 
     }
     .statistics{
-        top:2430px;
+        top:2550px;
         left:7%;
+        font-size: 22px;
     }
     canvas {
         width: 90vw !important;

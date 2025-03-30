@@ -1,10 +1,12 @@
 body {
+    
     background-color: rgb(21, 21, 21);
     color: white; /* Ensures text is visible */
     margin: 0; /* Removes default margins */
     padding: 0; /* Removes default padding */
     height: 100vh; /* Makes sure it covers the full viewport */
     overflow:hidden;
+    margin-top: 0px;
 
 }
 

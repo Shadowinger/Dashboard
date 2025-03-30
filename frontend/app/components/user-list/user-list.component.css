@@ -1,16 +1,17 @@
 /* Main container styles */
 .users-container {
     font-family: Calibri;
-    max-width: 450px;
+    width: 21vw;
+    max-width: 21vw;
     background-color: #252525;
     color: #ffffff;
     padding: 10px 0;
     box-sizing: border-box;
     overflow-y: auto; /* Enables vertical scrolling */
     max-height: 100vh; /* Sets the max height for the container */
-    height: 100%; /* Ensures container height is correctly set */
+    height: 100vh; /* Ensures container height is correctly set */
     position: absolute;
-    left:45%;
+    left:45vw;
     top:7.5%;
     border-radius: 10px;
 }
@@ -129,11 +130,12 @@
 .lastname {
     font-weight: bold;
     margin-right: 5px;
+    font-size: 1vw;
 }
 
 .firstname {
     color: #aaa;
-    font-size: 0.9em;
+    font-size: 0.6vw;
 }
 
 /* Call button styles */
@@ -169,6 +171,12 @@
     .users-text{
         top:1690px;
         left:8%;
+    }
+    .lastname{
+        font-size: 1rem;
+    }
+    .firstname{
+        font-size: 1rem;
     }
 
     @media screen and (orientation: landscape){

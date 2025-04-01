@@ -4,6 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { interval, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+/**
+ * Komponenta pro vykreslení čárového grafu.
+ */
 @Component({
   standalone: true,
   selector: 'app-line',
@@ -18,6 +21,10 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
 
   constructor(private http: HttpClient) {}
 
+  /**
+   * Lifecycle metoda, která se spouští po inicializaci pohledu.
+   * Zde se nastavuje interval pro načítání dat z API.
+   */
   ngAfterViewInit() {
     this.dataSubscription = interval(1000).pipe(
       switchMap(() => this.http.get<any>('assets/data.json'))
@@ -43,6 +50,10 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
     });
   }
 
+  /**
+   * Vytvoří nový čárový graf na základě poskytnutých dat.
+   * @param data - Data pro vykreslení grafu.
+   */
   createChart(data: any) {
     if (!data || !data.labels || !data.datasets) {
       console.error('Neplatná struktura dat:', data);
@@ -50,6 +61,7 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
     }
     this.labels = data.labels;
     this.datasets = data.datasets.map((dataset: any) => {
+      // Nastavení barvy pozadí pro různé typy dat
       if (dataset.label === 'Vyšetření') {
         dataset.backgroundColor = '#FFA500';
       } else if (dataset.label === 'Videozáznamy') {
@@ -97,7 +109,7 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
           x: {
             grid: {
               color: '#000000',
-              lineWidth: 1
+              lineWidth: 0
             },
             ticks: {
               color: 'white'
@@ -115,8 +127,10 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
         },
         elements: {
           point: {
-            radius: 4,
-            backgroundColor: 'transparent'
+            radius: 0
+          },
+          line: {
+            tension: 0.4
           }
         },
         backgroundColor: '#121212'
@@ -124,6 +138,10 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
     });
   }
 
+  /**
+   * Aktualizuje existující čárový graf na základě nových dat.
+   * @param data - Nová data pro aktualizaci grafu.
+   */
   updateChart(data: any) {
     if (!data || !data.labels || !data.datasets) {
       console.error('Neplatná struktura dat:', data);
@@ -131,6 +149,7 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
     }
     this.labels = data.labels;
     this.datasets = data.datasets.map((dataset: any) => {
+      // Nastavení barvy pozadí pro různé typy dat
       if (dataset.label === 'Vyšetření') {
         dataset.backgroundColor = '#FFA500';
       } else if (dataset.label === 'Videozáznamy') {
@@ -144,6 +163,10 @@ export class LineChartComponent implements AfterViewInit, OnDestroy {
     this.chart.update();
   }
 
+  /**
+   * Lifecycle metoda, která se spouští při zničení komponenty.
+   * Zde se uvolňují zdroje a předplatné.
+   */
   ngOnDestroy() {
     if (this.chart) {
       this.chart.destroy();

@@ -5,413 +5,374 @@
     box-sizing: border-box;
 }
 
-
 /* Sidebar Styles */
 .container {
-    position: absolute;
+    position: absolute; /* Positioning the sidebar */
     left: 0;
     top: 1;
-    width: 4.76vw;
-    height: 100vh;
-    background-color: #222;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 10;
-    transition: width 0.1s ease;
+    width: 4.76vw; /* Width of the sidebar */
+    height: 100vh; /* Full height */
+    background-color: #222; /* Background color */
+    padding-top: 20px; /* Padding at the top */
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Centering items */
+    z-index: 10; /* Layering order */
+    transition: width 0.1s ease; /* Transition effect for width */
 }
 
 .item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #aaa;
-    font-size: 0.8vw;
-    transition: all 0.3s ease-in-out;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-
+    display: flex; /* Flexbox for item layout */
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Centering items */
+    text-decoration: none; /* No underline for links */
+    color: #aaa; /* Text color */
+    font-size: 0.8vw; /* Font size */
+    transition: all 0.3s ease-in-out; /* Transition for hover effects */
+    width: 100%; /* Full width of the container */
+    text-align: center; /* Centered text */
+    padding: 10px 0; /* Vertical padding */
 }
 
 .item:hover {
-    background-color: #2a2a2a;
-    color: #fff;
+    background-color: #2a2a2a; /* Background color on hover */
+    color: #fff; /* Text color on hover */
 }
 
 /* Playlist Icons */
 .playlist-icon {
-    width: 2.38vw;
-    height: 2.38vw;
-    filter: grayscale(28%) brightness(0) invert(1);
-    opacity: 0.7;
-    transition: opacity 0.3s, transform 0.2s;
-    margin-bottom: 5px;
+    width: 2.38vw; /* Icon width */
+    height: 2.38vw; /* Icon height */
+    filter: grayscale(28%) brightness(0) invert(1); /* Filter effects */
+    opacity: 0.7; /* Initial opacity */
+    transition: opacity 0.3s, transform 0.2s; /* Transition effects */
+    margin-bottom: 5px; /* Margin below the icon */
 }
 
 .item:hover .playlist-icon {
-    opacity: 1;
-    transform: scale(1.1);
+    opacity: 1; /* Full opacity on hover */
+    transform: scale(1.1); /* Scale effect on hover */
 }
 
 .item:active .playlist-icon {
-    opacity: 0.5;
+    opacity: 0.5; /* Reduced opacity on active */
 }
 
 /* Main Content Container */
 .container2 {
-    position: absolute;
-    right: 25px;
-    top: 7.5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #222;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    min-width: 31vw;
-    height: 35vh;
-    margin: 0;
+    position: absolute; /* Positioning the main content */
+    right: 25px; /* Right alignment */
+    top: 7.5vh; /* Vertical positioning */
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Centering content */
+    align-items: center; /* Centering items */
+    background-color: #222; /* Background color */
+    color: white; /* Text color */
+    padding: 20px; /* Padding */
+    border-radius: 10px; /* Rounded corners */
+    min-width: 31vw; /* Minimum width */
+    height: 35vh; /* Height of the container */
+    margin: 0; /* No margin */
 }
 
 /* Buttons Styles */
 .buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    gap: 5px;
+    display: flex; /* Flexbox for button layout */
+    justify-content: space-between; /* Space between buttons */
+    width: 100%; /* Full width */
+    gap: 5px; /* Gap between buttons */
+}
+
+.watch-later-button,
+.shared-button,
+.last-played-button {
+    background-color: #191818; /* Background color */
+    text-transform: uppercase; /* Uppercase text */
+    color: rgb(212, 212, 212); /* Text color */
+    border: none; /* No border */
+    align-items: center; /* Centering items */
+    background: #111; /* Background color */
+    padding: 20px; /* Padding */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Centered text */
+    cursor: pointer; /* Pointer cursor */
+    transition: 0.3s; /* Transition effect */
+    position: absolute; /* Absolute positioning */
+    top: 2vw; /* Vertical positioning */
+    height: 21vh; /* Height of buttons */
+    width: 9vw; /* Width of buttons */
+    font-size: 0.6rem; /* Font size */
+    transition: opacity, 0.3s; /* Transition for opacity */
+    display: flex; /* Flexbox for button layout */
+    flex-direction: column; /* Column layout */
+    justify-content: flex-end; /* Align items to the bottom */
+    text-align: center; /* Centered text */
 }
 
 .watch-later-button {
-    background-color: #191818;
-    text-transform: uppercase;
-    color: rgb(212, 212, 212);
-    border: none;
-    align-items: center;
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-    position: absolute;
-    top: 2vw;
-    right: 1.2vw;
-    height: 21vh;
-    width: 9vw;
-    font-size: 0.6rem;
-    transition: opacity, 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: center;
+    right: 1.2vw; /* Right positioning */
 }
 
 .shared-button {
-    background-color: #191818;
-    text-transform: uppercase;
-    color: rgb(212, 212, 212);
-    border: none;
-    align-items: center;
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-    position: absolute;
-    top: 2vw;
-    right: 10.8vw;
-    height: 21vh;
-    width: 9vw;
-    font-size: 0.6rem;
-    transition: opacity, 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: center;
+    right: 10.8vw; /* Right positioning */
 }
 
 .last-played-button {
-    background-color: #191818;
-    text-transform: uppercase;
-    color: rgb(212, 212, 212);
-    border: none;
-    align-items: center;
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-    position: absolute;
-    top: 2vw;
-    font-size: 0.6rem;
-    height: 21vh;
-    width: 9vw;
-    transition: opacity, 0.3s;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    text-align: center;
+    top: 2vw; /* Vertical positioning */
 }
 
 .last-played-button:hover,
 .shared-button:hover,
 .watch-later-button:hover {
-    background-color: #2a2a2a;
+    background-color: #2a2a2a; /* Background color on hover */
 }
 
 .last-played-button:active,
 .shared-button:active,
 .watch-later-button:active {
-    opacity: 0.75;
-    transform: scale(0.98);
+    opacity: 0.75; /* Reduced opacity on active */
+    transform: scale(0.98); /* Scale effect on active */
 }
 
 /* Button Icons */
 .playlist-icon-right,
 .playlist-icon-right-middle,
 .playlist-icon-right-later {
-    width: 5.95vw;
-    height: 15vh;
-    max-width: 5.95vw;
-    filter: grayscale(28%) brightness(0) invert(1);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-    margin-bottom: 5px;
+    width: 5.95vw; /* Icon width */
+    height: 15vh; /* Icon height */
+    max-width: 5.95vw; /* Maximum width */
+    filter: grayscale(28%) brightness(0) invert(1); /* Filter effects */
+    opacity: 0.7; /* Initial opacity */
+    transition: all 0.3s ease; /* Transition effects */
+    margin-bottom: 5px; /* Margin below the icon */
 }
-
 
 .last-played-button:hover .playlist-icon-right,
 .shared-button:hover .playlist-icon-right-middle,
 .watch-later-button:hover .playlist-icon-right-later {
-    opacity: 1;
-    transform: scale(1.1);
+    opacity: 1; /* Full opacity on hover */
+    transform: scale(1.1); /* Scale effect on hover */
 }
 
 /* Own Playlists */
 .own-playlists {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-decoration: none;
-    gap: 8px;
-    color: #aaa;
-    font-size: 14px;
-    transition: all 0.3s ease-in-out;
-    text-decoration: underline;
-    position: fixed;
-    top: 35vh;
-    right: 15.8vw;
-    cursor: pointer;
-    padding-top: 8px;
-    width:16vw;
+    display: flex; /* Flexbox for layout */
+    flex-direction: row; /* Row layout */
+    align-items: center; /* Centering items */
+    text-decoration: none; /* No underline for links */
+    gap: 8px; /* Gap between items */
+    color: #aaa; /* Text color */
+    font-size: 14px; /* Font size */
+    transition: all 0.3s ease-in-out; /* Transition effects */
+    text-decoration: underline; /* Underline text */
+    position: fixed; /* Fixed positioning */
+    top: 35vh; /* Vertical positioning */
+    right: 15.8vw; /* Right positioning */
+    cursor: pointer; /* Pointer cursor */
+    padding-top: 8px; /* Padding at the top */
+    width: 16vw; /* Width of the container */
 }
 
-
 .own-playlists:hover {
-    color: #fff;
+    color: #fff; /* Text color on hover */
 }
 
 /* Separators */
 .separator,
 .separator2 {
-    background-color: #272727;
-    position: fixed;
+    background-color: #272727; /* Background color */
+    position: fixed; /* Fixed positioning */
 }
 
 .separator {
-    width: 2px;
-    right: 33.33vw;
-    top: 1.2vw;
-    bottom: 1vw;
+    width: 2px; /* Width of the separator */
+    right: 33.33vw; /* Right positioning */
+    top: 1.2vw; /* Vertical positioning */
+    bottom: 1vw; /* Bottom positioning */
 }
 
 .separator2 {
-    height: 2px;
-    width: 28vw;
-    top: 35vh;
-    right: 2.98vw;
-    background-color: #000000;
+    height: 2px; /* Height of the separator */
+    width: 28vw; /* Width of the separator */
+    top: 35vh; /* Vertical positioning */
+    right: 2.98vw; /* Right positioning */
+    background-color: #000000; /* Background color */
 }
 
 /* Header */
 .header {
-    position: absolute;
-    top: 20px;
-    right: 22.93vw;
-    font-size: 1.43vw;
-    font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-
+    position: absolute; /* Absolute positioning */
+    top: 20px; /* Vertical positioning */
+    right: 22.93vw; /* Right positioning */
+    font-size: 1.43vw; /* Font size */
+    font-weight: normal; /* Normal font weight */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 3px; /* Letter spacing */
 }
-
-
 
 @media screen and (max-width: 768px) {
     .container {
-        top: 0px;
-        width:100vw;
-        height: 12vh;
-        align-items: center;
-        flex-direction: row;
-
+        top: 0px; /* Reset top position */
+        width: 100vw; /* Full width */
+        height: 12vh; /* Height of the container */
+        align-items: center; /* Centering items */
+        flex-direction: row; /* Row layout */
     }
-    .item{
-        padding-top: 10px;
-        padding-bottom: 0px;
-        margin-bottom: 20px;
+    .item {
+        padding-top: 10px; /* Padding at the top */
+        padding-bottom: 0px; /* No padding at the bottom */
+        margin-bottom: 20px; /* Margin below items */
     }
-
 
     .container2 {
-        position: absolute;
-        top: 1000px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 95vw;
-        height: 300px;
+        position: absolute; /* Absolute positioning */
+        top: 1000px; /* Vertical positioning */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Centering */
+        width: 95vw; /* Width of the container */
+        height: 300px; /* Height of the container */
     }
 
     .buttons {
-        flex-direction: row;
-        gap: 5px;
-        width:100vw;
-        height: 30vw;
+        flex-direction: row; /* Row layout */
+        gap: 5px; /* Gap between buttons */
+        width: 100vw; /* Full width */
+        height: 30vw; /* Height of the buttons */
     }
 
     .watch-later-button {
-        width: 25vw;
-        height: 20vh;
-        transform: translateX(-50%);
-        position: fixed;
-        right:-8%;
-        align-items: flex-end; /* Posune text dolů */
-
+        width: 25vw; /* Width of the button */
+        height: 20vh; /* Height of the button */
+        transform: translateX(-50%); /* Centering */
+        position: fixed; /* Fixed positioning */
+        right: -8%; /* Right positioning */
+        align-items: flex-end; /* Align text to the bottom */
     }
-    .shared-button{
-        width: 25vw;
-        height: 20vh;
-        transform: translateX(-50%);
-        position: fixed;
-        left:50%;  
-        justify-content: flex-end; /* Posune text dolů */
-
+    .shared-button {
+        width: 25vw; /* Width of the button */
+        height: 20vh; /* Height of the button */
+        transform: translateX(-50%); /* Centering */
+        position: fixed; /* Fixed positioning */
+        left: 50%; /* Center horizontally */
+        justify-content: flex-end; /* Align text to the bottom */
     }
-    .last-played-button{
-        width: 25vw;
-        height: 20vh;
-        transform: translateX(-50%);
-        position: fixed;
-        left:18%;
-        justify-content: flex-end; /* Posune text dolů */
-
+    .last-played-button {
+        width: 25vw; /* Width of the button */
+        height: 20vh; /* Height of the button */
+        transform: translateX(-50%); /* Centering */
+        position: fixed; /* Fixed positioning */
+        left: 18%; /* Left positioning */
+        justify-content: flex-end; /* Align text to the bottom */
     }
 
     .header {
-        position: absolute;
-        top:960px;
-        left:30px;
-        font-size: 24px;
-        margin: 0;
+        position: absolute; /* Absolute positioning */
+        top: 960px; /* Vertical positioning */
+        left: 30px; /* Left positioning */
+        font-size: 24px; /* Font size */
+        margin: 0; /* No margin */
     }
 
     .separator {
-        display: none;
+        display: none; /* Hide separator */
     }
 
     .separator2 {
-        position: absolute;
-        top: 200px;
-        left:30px;
-        width: calc(100% - 70px);
+        position: absolute; /* Absolute positioning */
+        top: 200px; /* Vertical positioning */
+        left: 30px; /* Left positioning */
+        width: calc(100% - 70px); /* Width of the separator */
     }
 
     .own-playlists {
-        position: absolute;
-        bottom: 5px;
-        left:10px;
-        margin: 10px ;
-        text-align: center;
-        right: auto;
-        top: auto;
-        width: 80vw;
+        position: absolute; /* Absolute positioning */
+        bottom: 5px; /* Bottom positioning */
+        left: 10px; /* Left positioning */
+        margin: 10px; /* Margin */
+        text-align: center; /* Centered text */
+        right: auto; /* No right positioning */
+        top: auto; /* No top positioning */
+        width: 80vw; /* Width of the container */
     }
 
     .playlist-icon {
-        width: 30px;
-        height: 30px;
-
+        width: 30px; /* Width of the icon */
+        height: 30px; /* Height of the icon */
     }
     .playlist-icon-right-middle,
     .playlist-icon-right-later,
     .playlist-icon-right {
-        width: 70px;
-        height: 100px;
-        max-width: 70px;
-        position: fixed;
-        top:5%;
-        margin-bottom: 0;
-        align-self: center;
+        width: 70px; /* Width of the icon */
+        height: 100px; /* Height of the icon */
+        max-width: 70px; /* Maximum width */
+        position: fixed; /* Fixed positioning */
+        top: 5%; /* Vertical positioning */
+        margin-bottom: 0; /* No margin below */
+        align-self: center; /* Centering */
     }
 
     .item {
-        font-size: 12px;
+        font-size: 12px; /* Font size */
+    }
+    @media (min-height: 950px) and (max-height: 1060px) {
+        .container {
+            height: 9vh; /* Height of the container */
+        }
+        .last-played-button,
+        .shared-button,
+        .watch-later-button {
+            height: 18vh; /* Height of the buttons */
+        }
+    }
+    @media (max-width: 768px) and (min-height: 1060px) {
+        .last-played-button,
+        .shared-button,
+        .watch-later-button {
+            height: 15vh; /* Height of the buttons */
+        }
     }
     @media screen and (orientation: landscape) {
         .container2 {
-            position: absolute;
-            top: 880px; /* Uprav tuto hodnotu podle potřeby */
+            position: absolute; /* Absolute positioning */
+            top: 880px; /* Vertical positioning */
         }
-        .container{
-            height: 23vh;
-            width: 100vw;
-            padding-bottom: 0;
-            margin-bottom: 30;
+        .container {
+            height: 23vh; /* Height of the container */
+            width: 100vw; /* Full width */
+            padding-bottom: 0; /* No padding at the bottom */
+            margin-bottom: 30; /* Margin below */
         }
-        .header{
-            position: absolute;
-            top:830px;
-            left: 40px;
-    
+        .header {
+            position: absolute; /* Absolute positioning */
+            top: 830px; /* Vertical positioning */
+            left: 40px; /* Left positioning */
         }
         .shared-button,
         .watch-later-button,
-        .last-played-button{
-            height: 40vh;
-            width: 27vw;
-            text-align: end;
+        .last-played-button {
+            height: 40vh; /* Height of the buttons */
+            width: 27vw; /* Width of the buttons */
+            text-align: end; /* Align text to the end */
         }
-        .watch-later-button{
-            right:-10%;
+        .watch-later-button {
+            right: -10%; /* Right positioning */
         }
 
         .playlist-icon-right-later,
-        .playlist-icon-right-middle{
-            position: fixed;
-            top:1vh;
+        .playlist-icon-right-middle {
+            position: fixed; /* Fixed positioning */
+            top: 1vh; /* Vertical positioning */
         }
-        .playlist-icon-right{
-            position: fixed;
-            top:2vh;
+        .playlist-icon-right {
+            position: fixed; /* Fixed positioning */
+            top: 2vh; /* Vertical positioning */
         }
-
     }
 }
-@media screen and (max-width: 1024px) {
-    
-}
-
-
 
 /* Accessibility and Performance Enhancements */
 @media (prefers-reduced-motion: reduce) {
     * {
-        transition: none !important;
+        transition: none !important; /* Disable transitions for users who prefer reduced motion */
     }
 }

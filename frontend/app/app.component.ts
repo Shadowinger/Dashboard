@@ -12,6 +12,5 @@ import { DateDisplayComponent } from './components/date/date.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   imports: [DashboardComponent, UserListComponent, UserFormComponent, ChartComponent, LineChartComponent, TableComponent, DateDisplayComponent] // Přidání komponent do imports
- // Přidání komponent do imports
 })
 export class AppComponent { }

@@ -13,33 +13,32 @@ import { LineChartComponent } from './components/line-chart/line-chart.component
 import { TableComponent } from './components/table/table.component';
 import { DateDisplayComponent } from './components/date/date.component';
 
-
+// Define application routes
 const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'users', component: UserListComponent },
   { path: 'user-form', component: UserFormComponent },
   { path: 'line-chart', component: LineChartComponent },
   { path: 'table', component: TableComponent },
-  { path: "date", component: DateDisplayComponent}
+  { path: "date", component: DateDisplayComponent }
 ];
 
 @NgModule({
   imports: [
-    BrowserModule,
-    FormsModule,
-    RouterModule.forRoot(routes),
-    AppComponent,
-    DashboardComponent,
-    UserListComponent,
-    UserFormComponent,
-    ChartComponent,
-    LineChartComponent,
-    TableComponent,
-    DateDisplayComponent
-    
+    BrowserModule, // Required for browser-based applications
+    FormsModule, // For handling forms in the application
+    RouterModule.forRoot(routes), // Set up routing for the application
+    AppComponent, // Main application component
+    DashboardComponent, // Dashboard component
+    UserListComponent, // Component to display user list
+    UserFormComponent, // Component for user form
+    ChartComponent, // Base chart component
+    LineChartComponent, // Line chart component
+    TableComponent, // Table component for displaying data
+    DateDisplayComponent // Component for displaying dates
   ],
   providers: [
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(withInterceptorsFromDi()) // Set up HTTP client with interceptors
   ]
 })
 export class AppModule { }

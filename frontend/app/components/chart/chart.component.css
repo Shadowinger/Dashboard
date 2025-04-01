@@ -1,4 +1,5 @@
 .chart-container {
+  /* Main container for the chart */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,11 +11,12 @@
   position: absolute;
   top: 7.5vh;
   left: 7.27vw;
-  padding-top:2.2vh;
+  padding-top: 2.2vh;
   padding-bottom: 2.2vh;
 }
 
 .chart-numbers {
+  /* Style for the numbers displayed on the chart */
   font-size: 32px;
   font-weight: bold;
   color: white;
@@ -22,6 +24,7 @@
 }
 
 .gray {
+  /* Style for gray text */
   color: rgb(65, 65, 65); 
   position: absolute;
   bottom: 20%;
@@ -29,6 +32,7 @@
 }
 
 .pink {
+  /* Style for pink text */
   color: #e91e63;
   position: absolute;
   bottom: 8%;
@@ -36,6 +40,7 @@
 }
 
 .separator-6 {
+  /* Style for the separator line */
   width: 28%; 
   height: 3px; 
   background-color: rgb(0, 0, 0); 
@@ -46,6 +51,7 @@
 }
 
 .planned-text {
+  /* Style for planned text */
   position: absolute;
   top: 0%;
   left: 5%;
@@ -57,21 +63,23 @@
 }
 
 app-chart {
+  /* Hide the app chart */
   display: none;
 }
 
 canvas {
+  /* Style for the canvas element */
   position: absolute;
   right: 0%;
   top: 15%;
   width: 10vw;
   height: 30vh;
-
-  }
+}
 
 /* Mobile responsiveness for screens up to 768px */
 @media screen and (max-width: 768px) {
   .chart-container {
+    /* Adjust chart container for mobile view */
     width: 88vw;
     height: 50vh;
     max-height: 250px;
@@ -80,24 +88,27 @@ canvas {
     left: 3vw;
     margin: 0 auto;
     padding: 3vw;
-  
   }
 
   .chart-numbers {
+    /* Adjust font size for mobile view */
     font-size: 6vw;
   }
 
   .gray {
+    /* Adjust gray text position for mobile view */
     bottom: 18%;
     left: 5%;
   }
 
   .pink {
+    /* Adjust pink text position for mobile view */
     bottom: 6%;
     left: 15%;
   }
 
   .separator-6 {
+    /* Adjust separator line for mobile view */
     width: 25%;
     height: 2px;
     bottom: 18%;
@@ -105,6 +116,7 @@ canvas {
   }
 
   .planned-text {
+    /* Adjust planned text for mobile view */
     font-size: 3vw;
     width: 80%;
     top: 2%;
@@ -112,36 +124,41 @@ canvas {
   }
 
   canvas {
+    /* Adjust canvas size for mobile view */
     width: 30vw !important;
     height: 30vw !important;
-
   }
+
   @media screen and (orientation: landscape) {
     canvas {
+      /* Adjust canvas size for landscape orientation */
       width: 25vw !important;
       height: 25vw !important;
     }
     .separator-6 {
+      /* Adjust separator line for landscape orientation */
       width: 20%;
       height: 2px;
       bottom: 28%;
       left: 0;
     }
     .gray {
+      /* Adjust gray text position for landscape orientation */
       bottom: 29%;
       left: 5%;
     }
-  
+
     .pink {
+      /* Adjust pink text position for landscape orientation */
       bottom: 6%;
       left: 12%;
     }
-    .chart-container{
+    .chart-container {
+      /* Adjust chart container for landscape orientation */
       position: absolute;
       width: 88vw;
       top: 1230px;
       left: 3vw;
     }
-
   }
 }

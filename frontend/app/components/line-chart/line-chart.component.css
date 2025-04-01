@@ -1,144 +1,176 @@
-
 .chart-container {
-    position: absolute;
-    right:1.7vw;
-    top: 53vh;
-    display: flex;  
-    flex-direction: column;  /* Stack items vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center;  /* Center items horizontally */
-    background-color: #222;  /* Dark background */
-    color: white;
-    padding: 20px;
-    padding-top: 10px;
-    border-radius: 10px;
-    width: 28vw;  /* Adjust width */
-    height: 40vh; /* Adjust height */
-    margin: 0px;  /* Space from other elements */
-}
-.active{
-    font-size: 14px;  /* Make text larger */
-    font-weight: normal;  /* Make it bold */
-    text-transform: uppercase;  /* Make it all caps if needed */
-    display: inline-block;  /* Prevents unwanted effects from scaling */
-    letter-spacing: 2px;
-    position: absolute;
-    top:10%;
-    left:5%;
+    /* Kontejner pro graf, umístění a stylování */
+    position: absolute; /* Absolutní umístění vzhledem k rodiči */
+    right: 1.7vw; /* Vzdálenost od pravého okraje */
+    top: 53vh; /* Vzdálenost od horního okraje */
+    display: flex; /* Použití flexboxu pro uspořádání dětí */
+    flex-direction: column; /* Uložení položek vertikálně */
+    justify-content: center; /* Vertikální centrování položek */
+    align-items: center; /* Horizontální centrování položek */
+    background-color: #222; /* Tmavé pozadí pro kontrast */
+    color: white; /* Barva textu */
+    padding: 20px; /* Vnitřní odsazení */
+    padding-top: 10px; /* Odsazení shora */
+    border-radius: 10px; /* Zaoblení rohů */
+    width: 28vw; /* Šířka kontejneru */
+    height: 40vh; /* Výška kontejneru */
+    margin: 0px; /* Žádný okraj */
 }
 
-.separator4{
-    position: absolute;
-    bottom:11%;
-    width: 90%;
-    background-color: #000000;
-    height:2px;
-}
-.separator5{
-    position: absolute;
-    top: 20%;
-    right:4%;
-    width:34%;
-    background-color: #5d5d5d;
-    height:2px;
+.active {
+    /* Aktivní prvek, stylování textu */
+    font-size: 14px; /* Velikost písma */
+    font-weight: normal; /* Normální tloušťka písma */
+    text-transform: uppercase; /* Velká písmena */
+    display: inline-block; /* Blokový prvek pro lepší ovládání */
+    letter-spacing: 2px; /* Mezera mezi písmeny */
+    position: absolute; /* Absolutní umístění */
+    top: 10%; /* Vzdálenost od horního okraje */
+    left: 5%; /* Vzdálenost od levého okraje */
 }
 
-.activities-hospital{
-    color:rgb(187, 10, 187);
-    font-size: 12px;  /* Make text larger */
-    font-weight: normal;  /* Make it bold */
-    text-transform: uppercase;  /* Make it all caps if needed */
-    display: inline-block;  /* Prevents unwanted effects from scaling */
-    letter-spacing: 2px;
-    position: absolute;
-    text-decoration: underline;
-    top:14%;
-    right:5%;
-    cursor: pointer;
-    transition: opacity, 0.3s;
+.separator4 {
+    /* Oddělovací čára 4 */
+    position: absolute; /* Absolutní umístění */
+    bottom: 11%; /* Vzdálenost od spodního okraje */
+    width: 90%; /* Šířka čáry */
+    background-color: #000000; /* Barva čáry */
+    height: 2px; /* Výška čáry */
 }
-.activities-hospital:active{
-    opacity: 0.6;
+
+.separator5 {
+    /* Oddělovací čára 5 */
+    position: absolute; /* Absolutní umístění */
+    top: 20%; /* Vzdálenost od horního okraje */
+    right: 4%; /* Vzdálenost od pravého okraje */
+    width: 34%; /* Šířka čáry */
+    background-color: #5d5d5d; /* Barva čáry */
+    height: 2px; /* Výška čáry */
 }
-.statistics{
-    font-size: 1.43vw;  /* Make text larger */
-    font-weight: normal;  /* Make it bold */
-    text-transform: uppercase;  /* Make it all caps if needed */
-    display: inline-block;  /* Prevents unwanted effects from scaling */
-    letter-spacing: 3px;
-    position: absolute;
-    top:45%;
-    right: 21.7%;
+
+.activities-hospital {
+    /* Styl pro aktivity v nemocnici */
+    color: rgb(187, 10, 187); /* Barva textu */
+    font-size: 12px; /* Velikost písma */
+    font-weight: normal; /* Normální tloušťka písma */
+    text-transform: uppercase; /* Velká písmena */
+    display: inline-block; /* Blokový prvek pro lepší ovládání */
+    letter-spacing: 2px; /* Mezera mezi písmeny */
+    position: absolute; /* Absolutní umístění */
+    text-decoration: underline; /* Podtržení textu */
+    top: 14%; /* Vzdálenost od horního okraje */
+    right: 5%; /* Vzdálenost od pravého okraje */
+    cursor: pointer; /* Ukazatel myši na prvek */
+    transition: opacity, 0.3s; /* Plynulý přechod pro opacitu */
 }
+
+.activities-hospital:active {
+    /* Styl pro aktivní stav aktivity */
+    opacity: 0.6; /* Změna opacity při aktivaci */
+}
+
+.statistics {
+    /* Styl pro statistiky */
+    font-size: 1.43vw; /* Velikost písma */
+    font-weight: normal; /* Normální tloušťka písma */
+    text-transform: uppercase; /* Velká písmena */
+    display: inline-block; /* Blokový prvek pro lepší ovládání */
+    letter-spacing: 3px; /* Mezera mezi písmeny */
+    position: absolute; /* Absolutní umístění */
+    top: 45%; /* Vzdálenost od horního okraje */
+    right: 21.7%; /* Vzdálenost od pravého okraje */
+}
+
 canvas {
-    width: 30vw !important;
-    height: 30vh !important;
-    position: absolute;
-    top:28%;
+    /* Styl pro plátno grafu */
+    width: 30vw !important; /* Šířka plátna */
+    height: 30vh !important; /* Výška plátna */
+    position: absolute; /* Absolutní umístění */
+    top: 28%; /* Vzdálenost od horního okraje */
 }
 
+/* Media queries pro responzivní design */
 @media (max-width: 768px) {
-    .chart-container{
-        top:2620px;
-        left:5%;
-        width: 80vw;
-        height:40vh;
-
-
+    .chart-container {
+        top: 2620px; /* Nová pozice kontejneru */
+        left: 5%; /* Nová pozice kontejneru */
+        width: 80vw; /* Nová šířka kontejneru */
+        height: 40vh; /* Nová výška kontejneru */
     }
-    .statistics{
-        top:2550px;
-        left:7%;
-        font-size: 22px;
+    .statistics {
+        top: 2550px; /* Nová pozice statistik */
+        left: 7%; /* Nová pozice statistik */
+        font-size: 22px; /* Nová velikost písma statistik */
     }
     canvas {
-        width: 90vw !important;
-        height: 37vh !important;
-        top:18%;
-
-
+        width: 90vw !important; /* Nová šířka plátna */
+        height: 37vh !important; /* Nová výška plátna */
+        top: 18%; /* Nová pozice plátna */
     }
-    .active{
-        top:3%;
+    .active {
+        top: 3%; /* Nová pozice aktivního prvku */
     }
-    .separator4{
-        bottom:13%;
+    .separator4 {
+        bottom: 13%; /* Nová pozice oddělovací čáry 4 */
     }
-    @media screen and (orientation: landscape){
-        canvas{
-            width: 80vw !important;
-            height:80vh !important;
-            top:17%;
+}
 
-        }
-        .statistics{
-            top: 1910px;
-            left:7%;
-
-        }
-        .chart-container{
-            top:1980px;
-            left:5%;
-            width: 80vw;
-            height:90vh;
-    
-        }
-        .separator4{
-            bottom:10%;
-        }
-        .activities-hospital{
-            top:3%;
-        }
-        .separator5{
-            top:7%;
-        }
+@media (max-width: 768px) and (min-height: 900px) and (max-height: 1060px) {
+    .chart-container {
+        top: 295vh; /* Nová pozice kontejneru */
+        left: 5%; /* Nová pozice kontejneru */
+        width: 80vw; /* Nová šířka kontejneru */
+        height: 40vh; /* Nová výška kontejneru */
     }
-    
-}   
+    .statistics {
+        top: 290vh; /* Nová pozice statistik */
+        left: 7%; /* Nová pozice statistik */
+        font-size: 22px; /* Nová velikost písma statistik */
+    }
+    canvas {
+        width: 86vw !important; /* Nová šířka plátna */
+        height: 35vh !important; /* Nová výška plátna */
+        top: 18%; /* Nová pozice plátna */
+    }
+}
 
+@media (max-width: 768px) and (min-height: 1060px) {
+    .chart-container {
+        top: 240vh; /* Nová pozice kontejneru */
+        left: 5%; /* Nová pozice kontejneru */
+        width: 80vw; /* Nová šířka kontejneru */
+        height: 40vh; /* Nová výška kontejneru */
+    }
+    .statistics {
+        top: 235vh; /* Nová pozice statistik */
+        left: 7%; /* Nová pozice statistik */
+        font-size: 22px; /* Nová velikost písma statistik */
+    }
+}
 
-
-
-
-
-
+@media (max-width: 768px) and (orientation: landscape) {
+    canvas {
+        width: 80vw !important; /* Nová šířka plátna v režimu na šířku */
+        height: 80vh !important; /* Nová výška plátna v režimu na šířku */
+        top: 17%; /* Nová pozice plátna v režimu na šířku */
+    }
+    .statistics {
+        top: 1910px; /* Nová pozice statistik v režimu na šířku */
+        left: 7%; /* Nová pozice statistik v režimu na šířku */
+    }
+    .chart-container {
+        top: 1980px; /* Nová pozice kontejneru v režimu na šířku */
+        left: 5%; /* Nová pozice kontejneru v režimu na šířku */
+        width: 80vw; /* Nová šířka kontejneru v režimu na šířku */
+        height: 90vh; /* Nová výška kontejneru v režimu na šířku */
+    }
+    .separator4 {
+        bottom: 10%; /* Nová pozice oddělovací čáry 4 v režimu na šířku */
+    }
+    .activities-hospital {
+        top: 3%; /* Nová pozice aktivit v nemocnici v režimu na šířku */
+    }
+    .separator5 {
+        top: 7%; /* Nová pozice oddělovací čáry 5 v režimu na šířku */
+    }
+}

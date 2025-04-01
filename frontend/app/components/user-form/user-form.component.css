@@ -1,122 +1,124 @@
 .todays-checkups {
-    font-size: 1.43vw;
+    font-size: 1.43vw; /* Font size for today's checkups */
     font-weight: normal;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    position: absolute;
-    top: 1%;
-    left: 6.8%;
-    margin: 0.6vw;
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 3px; /* Letter spacing */
+    position: absolute; /* Positioning */
+    top: 1%; /* Position from top */
+    left: 6.8%; /* Position from left */
+    margin: 0.6vw; /* Margin */
 }
 
 .container-activities {
-    position: absolute;
-    left: 35%;
-    top: 7.5vh;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #222;
-    color: white;
-    padding-top: 2.5vh;
-    padding-bottom: 2.5vh;
-    padding-right: 1vw;
-    padding-left: 1vw;    
-    border-radius: 0.6vw;
-    width: 13vw;
-    height: 25vh;
-
+    position: absolute; /* Positioning */
+    left: 36%; /* Position from left */
+    top: 7.5vh; /* Position from top */
+    transform: translateX(-50%); /* Centering */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Column direction */
+    justify-content: center; /* Centering content */
+    align-items: center; /* Centering items */
+    background-color: #222; /* Background color */
+    color: white; /* Text color */
+    padding-top: 2.5vh; /* Top padding */
+    padding-bottom: 2.5vh; /* Bottom padding */
+    padding-right: 1vw; /* Right padding */
+    padding-left: 1vw; /* Left padding */    
+    border-radius: 0.6vw; /* Rounded corners */
+    width: 13vw; /* Width */
+    height: 25vh; /* Height */
 }
 
 .text-checkup {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    margin-bottom: 15px;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    position: relative; /* Positioning */
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+    margin-bottom: 15px; /* Bottom margin */
+    font-size: 0.8rem; /* Font size */
+    letter-spacing: 1px; /* Letter spacing */
+    text-transform: uppercase; /* Uppercase text */
 }
 
 .checkup, .video, .images {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    border-bottom: 2px solid #141414;
-    padding-bottom: 8px;
-    margin-bottom: 10px;
+    position: relative; /* Positioning */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Align items */
+    width: 100%; /* Full width */
+    border-bottom: 2px solid #141414; /* Bottom border */
+    padding-bottom: 8px; /* Bottom padding */
+    margin-bottom: 10px; /* Bottom margin */
 }
 
 .checkup-icon, .video-icon, .images-icon {
-    width: 2.09vw;
-    height: 2.09vw;
-    margin-right: 0.89vw;
-    filter: grayscale(28%) brightness(0) invert(1);
-    opacity: 0.7;
+    width: 2.09vw; /* Icon width */
+    height: 2.09vw; /* Icon height */
+    margin-right: 0.89vw; /* Right margin */
+    filter: grayscale(28%) brightness(0) invert(1); /* Icon filter */
+    opacity: 0.7; /* Opacity */
 }
 
 .activities-text {
-    flex-grow: 1;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin: 0;
+    flex-grow: 1; /* Allow to grow */
+    font-size: 0.7rem; /* Font size */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Letter spacing */
+    margin: 0; /* No margin */
 }
 
+/* Color styles for activity labels */
 .yellow, .pink, .blue {
-    font-size: 1.3vw;
-    font-weight: bold;
-    margin-left: auto;
+    font-size: 1.3vw; /* Font size */
+    font-weight: bold; /* Bold text */
+    margin-left: auto; /* Auto margin left */
 }
 
-.yellow { color: #ff9800; }
-.pink { color: #e91e63; }
-.blue { color: #1976d2; }
+.yellow { color: #ff9800; } /* Yellow color */
+.pink { color: #e91e63; } /* Pink color */
+.blue { color: #1976d2; } /* Blue color */
 
+/* Responsive styles */
 @media (max-width: 768px) {
-    .todays-checkups{
-        margin-bottom: 10px;
-        font-size: 24px;
-        top:110px
+    .todays-checkups {
+        margin-bottom: 10px; /* Bottom margin */
+        font-size: 24px; /* Font size */
+        top: 110px; /* Position from top */
     }
+    
     .yellow, .pink, .blue {
-        font-size: 5.3vw;
-
+        font-size: 5.3vw; /* Font size for labels */
     }
+    
     .container-activities {
-        max-width: 81vw;
-        width: 81vw;
-        height: 180px;
-        max-height: none;
-        padding: 30px;
-        position: absolute;
-        top: 170px;
-        left: 50%;
-        border-radius: 10px;
+        max-width: 81vw; /* Maximum width */
+        width: 81vw; /* Width */
+        height: 180px; /* Height */
+        max-height: none; /* No maximum height */
+        padding: 30px; /* Padding */
+        position: absolute; /* Positioning */
+        top: 170px; /* Position from top */
+        left: 50%; /* Position from left */
+        border-radius: 10px; /* Rounded corners */
     }
 
     .activities-content {
-        max-width: 100%;
+        max-width: 100%; /* Maximum width */
     }
 
     .activity-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: column; /* Column direction */
+        align-items: center; /* Center items */
+        text-align: center; /* Center text */
     }
 
     .checkup-icon, .video-icon, .images-icon {
-        margin-right: 10px;
-        margin-bottom: 10px;
-        width:30px;
-        height: auto;
+        margin-right: 10px; /* Right margin */
+        margin-bottom: 10px; /* Bottom margin */
+        width: 30px; /* Icon width */
+        height: auto; /* Auto height */
     }
 
     .yellow, .pink, .blue {
-        margin-left: 0;
-        margin-top: 5px;
+        margin-left: 0; /* No left margin */
+        margin-top: 5px; /* Top margin */
     }
 }

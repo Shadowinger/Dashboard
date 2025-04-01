@@ -2,11 +2,13 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
+// Interface to define the structure of a Patient
 interface Patient {
   name: string;
   id?: string;
 }
 
+// Interface to define the structure of an Appointment
 interface Appointment {
   poradi: number;
   room: string | null;
@@ -18,6 +20,7 @@ interface Appointment {
   status: string;
 }
 
+// Interface to define the structure of the API response
 interface ApiResponse {
   tableData: Appointment[];
 }
@@ -30,16 +33,22 @@ interface ApiResponse {
   imports: [CommonModule]
 })
 export class TableComponent implements OnInit {
+  // Array to hold appointment data
   tableData: Appointment[] = [];
+  
+  // Variable to hold error messages
   errorMessage: string | null = null;
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.loadAppointments(); // Load data on component initialization
-    setInterval(() => this.loadAppointments(), 5000); // Reload data every 5 seconds
+
+    // Reload data every 5 seconds
+    setInterval(() => this.loadAppointments(), 5000);
   }
 
+  // Method to load appointments from the API
   loadAppointments() {
     console.log("📥 Loading data from assets/data.json...");
 
@@ -47,6 +56,7 @@ export class TableComponent implements OnInit {
       next: (response) => {
         console.log("✅ Data loaded:", response.tableData);
 
+        // Check if the response contains valid data
         if (Array.isArray(response.tableData) && response.tableData.length > 0) {
           this.tableData = response.tableData.map((item, index) => ({
             ...item,

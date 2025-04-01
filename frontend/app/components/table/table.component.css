@@ -1,4 +1,5 @@
 :root {
+    /* Color Variables */
     --bg-primary: #121212;
     --bg-secondary: #1E1E1E;
     --bg-table: #252525;
@@ -8,12 +9,14 @@
     --hover-color: #333333;
     --border-color: #333333;
 }
-app-table{
+
+app-table {
     display: none;
 }
 
 .app-container {
-    width: 37.2vw;
+    /* Main container styles */
+    width: 37.7vw;
     height: 60vh;
     background-color: var(--bg-primary);
     max-height: none;
@@ -24,22 +27,23 @@ app-table{
     overflow: hidden;
     position: absolute;
     bottom: 0%;
-    left:6%;
+    left: 6%;
 }
 
-
 .meetings-section {
+    /* Meetings section styles */
     width: 95%;
     height: 90%;
     background-color: var(--bg-secondary);
     border-radius: 12px;
     padding: 10px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
 }
 
 .meetings-header {
+    /* Header styles */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,17 +51,18 @@ app-table{
 }
 
 .meetings-title {
+    /* Title styles */
     font-size: 1.43vw;
     font-weight: 700;
     font-size: 22px;  /* Make text larger */
     font-weight: normal;  /* Make it bold */
     text-transform: uppercase;  /* Make it all caps if needed */
     letter-spacing: 3px;
-    margin:10px;
-    
+    margin: 10px;
 }
 
 .meetings-table-wrapper {
+    /* Table wrapper styles */
     flex-grow: 1;
     overflow-y: auto;
     background-color: var(--bg-table);
@@ -67,6 +72,7 @@ app-table{
 }
 
 .meetings-table {
+    /* Table styles */
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 5px;
@@ -74,6 +80,7 @@ app-table{
 }
 
 .meetings-table thead {
+    /* Table header styles */
     position: sticky;
     top: 0;
     background-color: var(--bg-table);
@@ -81,6 +88,7 @@ app-table{
 }
 
 .meetings-table thead th {
+    /* Table header cell styles */
     color: var(--text-secondary);
     font-size: 10px;
     font-weight: 600;
@@ -94,16 +102,19 @@ app-table{
 }
 
 .meetings-table tbody tr {
+    /* Table body row styles */
     background-color: #2C2C2C;
     transition: background-color 0.3s ease;
     border-radius: 8px;
 }
 
 .meetings-table tbody tr:hover {
+    /* Hover effect for table body row */
     background-color: var(--hover-color);
 }
 
 .meetings-table td {
+    /* Table cell styles */
     padding: 8px 6px;
     color: var(--text-primary);
     font-size: 11px;
@@ -114,25 +125,29 @@ app-table{
 }
 
 .meetings-table tbody tr:last-child td {
+    /* Last row cell styles */
     border-bottom: none;
 }
 
 .status-done {
+    /* Status styles for done */
     color: #4CAF50;
     font-weight: bold;
 }
 
 .status-pending {
+    /* Status styles for pending */
     color: #FFC107;
     font-weight: bold;
 }
 
 .status-canceled {
+    /* Status styles for canceled */
     color: #F44336;
     font-weight: bold;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar styles */
 .meetings-table-wrapper::-webkit-scrollbar {
     width: 6px;
 }
@@ -168,5 +183,4 @@ app-table{
         height: 100%;
         border-radius: 0;
     }
-
 }

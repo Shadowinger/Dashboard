@@ -140,5 +140,5 @@ This README provides a clear and structured documentation for developers looking
 
 
 
-Author 
+## Author
 Stanislav Křikava

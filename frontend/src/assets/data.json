@@ -153,17 +153,17 @@
     "Users": [
         {
             "id": 1,
-            "lastName": "KRATOCHVÍL",
-            "firstName": "Jaroslav",
-            "phone": "123456789",
+            "lastName": "BONDAR",
+            "firstName": "Maksym",
+            "phone": "607655271",
             "status": "available",
             "role": "Lékař"
         },
         {
             "id": 2,
-            "lastName": "MOUDRÁ",
-            "firstName": "Anna",
-            "phone": "234567890",
+            "lastName": "KŘIKAVA",
+            "firstName": "Stanislav",
+            "phone": "607791143",
             "status": "busy",
             "role": "Sestra"
         },

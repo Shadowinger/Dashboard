@@ -1,4 +1,5 @@
 /* Main container styles */
+/* Styles for the main user list container */
 .users-container {
     font-family: Calibri;
     width: 21vw;
@@ -16,6 +17,9 @@
     border-radius: 10px;
     scrollbar-color: #333;
 }
+
+/* Separator styles */
+/* Styles for the separator element in the user list */
 .separator-4{
     width: 2px;
     position: absolute;
@@ -24,7 +28,10 @@
     bottom: 1vw;
     background-color: rgb(39, 39, 39);
 }
- .users-text{
+
+/* User text styles */
+/* Styles for the text displaying user information */
+.users-text{
     font-size: 22px;
     font-weight: normal;
     margin: 0 0 15px 15px;
@@ -36,15 +43,17 @@
 }
 
 /* Table styles */
+/* Styles for the user table layout */
 .users-table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
     max-height: 100vh; /* Sets max height for the table */
     display: block; /* Allows the table to be scrollable */
-    
 }
 
+/* User row styles */
+/* Styles for each row in the user table */
 .user-row {
     border-bottom: 2px solid #1c1c1c;
 }
@@ -54,6 +63,7 @@
 }
 
 /* Table cell styles */
+/* Styles for the individual cells in the user table */
 .status-cell {
     width: 1.2vh;
     padding: 10px 0 10px 15px;
@@ -81,6 +91,7 @@
 }
 
 /* Status indicator styles */
+/* Styles for the status indicators representing user availability */
 .status-indicator {
     width: 0.5vw;
     height: 1vh;
@@ -102,6 +113,7 @@
 }
 
 /* User avatar styles */
+/* Styles for the user avatars displayed in the list */
 .user-avatar {
     width: 1.9vw;
     height: 3.9vh;
@@ -132,6 +144,7 @@
 }
 
 /* Name styles */
+/* Styles for the user names displayed in the list */
 .lastname {
     font-weight: bold;
     margin-right: 5px;
@@ -144,6 +157,7 @@
 }
 
 /* Call button styles */
+/* Styles for the call button associated with each user */
 .call-button {
     display: flex;
     justify-content: center;
@@ -162,7 +176,8 @@
     height: 16px;
 }
 
-
+/* Media query for small screens */
+/* Responsive styles for screens smaller than 768px */
 @media (max-width: 768px) {
     .separator-4{
         visibility: hidden;
@@ -195,9 +210,10 @@
         width: 10px;
         height: 10px;
         margin-right: 10vw;
-
     }
 
+    /* Media query for landscape orientation */
+    /* Responsive styles for landscape orientation */
     @media screen and (orientation: landscape){
         .users-container{
             top:1570px;
@@ -238,18 +254,16 @@
         }
         
         /* Status indicator styles */
+        /* Styles for the status indicators in landscape orientation */
         .status-indicator {
             width: 8px;
             height: 8px;
             border-radius: 50%;
             display: inline-block;
-        
         }
         .user-avatar{
             width: 5vw;
             height:10vh;
         }
-
-
     }
 }

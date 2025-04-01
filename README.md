@@ -138,3 +138,7 @@ Currently using a JSON file (`database.json`), with an option to migrate to Mong
 
 This README provides a clear and structured documentation for developers looking to understand and extend the project. 
 
+
+
+Author 
+Stanislav Křikava

@@ -7,13 +7,14 @@
     color: #ffffff;
     padding: 10px 0;
     box-sizing: border-box;
-    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-y: scroll; /* Enables vertical scrolling */
     max-height: 100vh; /* Sets the max height for the container */
     height: 100vh; /* Ensures container height is correctly set */
     position: absolute;
     left:45vw;
     top:7.5%;
     border-radius: 10px;
+    scrollbar-color: #333;
 }
 .separator-4{
     width: 2px;
@@ -39,9 +40,9 @@
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
-    overflow-y: auto; /* Enables vertical scrolling if content exceeds height */
-    max-height: 100vhpx; /* Sets max height for the table */
+    max-height: 100vh; /* Sets max height for the table */
     display: block; /* Allows the table to be scrollable */
+    
 }
 
 .user-row {
@@ -54,7 +55,7 @@
 
 /* Table cell styles */
 .status-cell {
-    width: 20px;
+    width: 1.2vh;
     padding: 10px 0 10px 15px;
     vertical-align: middle;
 }
@@ -66,12 +67,14 @@
 }
 
 .name-cell {
+    width: 30vw;
+    height:5vh;
     padding: 10px 0;
     vertical-align: middle;
 }
 
 .call-cell {
-    width: 40px;
+    width: 10vw;
     padding: 10px 15px 10px 0;
     text-align: right;
     vertical-align: middle;
@@ -79,9 +82,10 @@
 
 /* Status indicator styles */
 .status-indicator {
-    width: 8px;
-    height: 8px;
+    width: 0.5vw;
+    height: 1vh;
     border-radius: 50%;
+    margin-right: 1vw;
     display: inline-block;
 }
 
@@ -99,10 +103,11 @@
 
 /* User avatar styles */
 .user-avatar {
-    width: 32px;
-    height: 32px;
+    width: 1.9vw;
+    height: 3.9vh;
     border-radius: 50%;
     background-color: #333;
+    margin-right: 1vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,6 +167,9 @@
     .separator-4{
         visibility: hidden;
     }
+    .name-cell{
+        width: 50vw;
+    }
     .users-container{
         top:1740px;
         width: 90vw;
@@ -178,6 +186,17 @@
     .firstname{
         font-size: 1rem;
     }
+    .user-avatar{
+        width: 40px;
+        height: 40px;
+        margin-right: 5vw;
+    }
+    .status-indicator{
+        width: 10px;
+        height: 10px;
+        margin-right: 10vw;
+
+    }
 
     @media screen and (orientation: landscape){
         .users-container{
@@ -188,7 +207,7 @@
             left:3%;
         }
         .users-text{
-            top:1520px;
+            top:100vh;
             left:5%;
             font-size: 25px;
         }
@@ -196,6 +215,7 @@
             width: 10vw;
             padding: 10px 0 10px 15px;
             vertical-align: middle;
+            margin-right: 10px;
         }
         
         .avatar-cell {
@@ -223,6 +243,13 @@
             height: 8px;
             border-radius: 50%;
             display: inline-block;
+        
         }
+        .user-avatar{
+            width: 5vw;
+            height:10vh;
+        }
+
+
     }
 }

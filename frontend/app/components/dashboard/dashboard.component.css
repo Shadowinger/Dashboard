@@ -28,11 +28,12 @@
     align-items: center;
     text-decoration: none;
     color: #aaa;
-    font-size: 14px;
+    font-size: 0.8vw;
     transition: all 0.3s ease-in-out;
     width: 100%;
     text-align: center;
     padding: 10px 0;
+
 }
 
 .item:hover {
@@ -63,7 +64,7 @@
 .container2 {
     position: absolute;
     right: 25px;
-    top: 60px;
+    top: 7.5vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,7 +75,6 @@
     min-width: 31vw;
     height: 35vh;
     margin: 0;
-    transition: all 0.3s ease;
 }
 
 /* Buttons Styles */
@@ -173,6 +173,7 @@
 }
 
 /* Button Icons */
+.playlist-icon-right,
 .playlist-icon-right-middle,
 .playlist-icon-right-later {
     width: 5.95vw;
@@ -183,17 +184,7 @@
     transition: all 0.3s ease;
     margin-bottom: 5px;
 }
-.playlist-icon-right{
-    width: 7.95vw;
-    height: 17vh;
-    max-width: 7.95vw;
-    filter: grayscale(28%) brightness(0) invert(1);
-    opacity: 0.7;
-    transition: all 0.3s ease;
-    margin-bottom: 5px;
-    position: absolute;
-    top:10%;
-}
+
 
 .last-played-button:hover .playlist-icon-right,
 .shared-button:hover .playlist-icon-right-middle,
@@ -392,7 +383,7 @@
         .shared-button,
         .watch-later-button,
         .last-played-button{
-            height:20vw;
+            height: 40vh;
             width: 27vw;
             text-align: end;
         }
@@ -411,6 +402,9 @@
         }
 
     }
+}
+@media screen and (max-width: 1024px) {
+    
 }
 
 

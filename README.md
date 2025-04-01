@@ -1,55 +1,140 @@
 # Dashboard Project
 
-## Overview
-This project is a modern dashboard built using Angular, designed for real-time data visualization and management. It includes features such as user management, appointment tracking, activity statistics, and media playlists.
+## Table of Contents
+- [Project Description](#project-description)
+- [Technologies](#technologies)
+- [Project Structure](#project-structure)
+- [Installation and Setup](#installation-and-setup)
+- [Backend API](#backend-api)
+- [Frontend Application](#frontend-application)
+- [Functionality](#functionality)
+- [Styling](#styling)
+- [Database](#database)
+- [Potential Enhancements](#potential-enhancements)
 
-## Features
-- 📊 **Dynamic Statistics** – Graphs and charts displaying various activities.
-- 🗓 **Appointments & Meetings** – Manage scheduled examinations and consultations.
-- 👤 **User Management** – List of active users with contact options.
-- 📹 **Media Playlists** – View, share, and organize recorded sessions.
-- 📷 **Camera Integration** – Display and manage recorded video feeds.
-- 🎨 **Modern UI** – Dark theme with clean, responsive design.
+---
 
-## Tech Stack
-- **Frontend:** Angular, TypeScript, HTML, CSS
-- **Backend:** Express.js (if applicable)
-- **Database:** Static file (.json) but can use database like MONGODB/Postgresql
+## Project Description
+A dashboard application built with Angular and a Node.js/Express.js backend, providing a REST API for managing users and displaying dynamic real-time data.
 
-## Installation
-```sh
-# Clone the repository
-git clone https://github.com/your-repo/dashboard-project.git
-cd dashboard-project
+## Technologies
+- **Frontend:** Angular, TypeScript, RxJS
+- **Backend:** Node.js, Express.js
+- **Database:** JSON file (for simplicity, can be upgraded to MongoDB)
+- **Styling:** CSS
 
-# Install dependencies
-npm install
-
-# Run the development server
-ng serve
+## Project Structure
+```
+DASHBOARD-PROJECT/
+├── .vscode/
+│
+├── backend/
+│   ├── routes/
+│   │   ├── users.js
+│   ├── database.json
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── server.js
+│   ├── tsconfig.json
+│
+├── frontend/
+│   ├── .angular/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── chart/
+│   │   │   │   ├── chart.component.css
+│   │   │   │   ├── chart.component.html
+│   │   │   │   ├── chart.component.ts
+│   │   │   ├── dashboard/
+│   │   │   │   ├── dashboard.component.css
+│   │   │   │   ├── dashboard.component.html
+│   │   │   │   ├── dashboard.component.ts
+│   │   │   ├── date/
+│   │   │   │   ├── date.component.css
+│   │   │   │   ├── date.component.html
+│   │   │   │   ├── date.component.ts
+│   │   │   ├── line-chart/
+│   │   │   │   ├── line-chart.component.css
+│   │   │   │   ├── line-chart.component.html
+│   │   │   │   ├── line-chart.component.ts
+│   │   │   ├── table/
+│   │   │   │   ├── table.component.css
+│   │   │   │   ├── table.component.html
+│   │   │   │   ├── table.component.ts
+│   │   │   ├── user-form/
+│   │   │   │   ├── user-form.component.css
+│   │   │   │   ├── user-form.component.html
+│   │   │   │   ├── user-form.component.ts
+│   │   ├── services/
+│   │   ├── app.component.html
+│   │   ├── app.component.ts
+│   │   ├── app.module.ts
+│   ├── src/
+│   │   ├── index.html
+│   │   ├── main.ts
+│   │   ├── polyfills.ts
+│   │   ├── styles.css
+│   │   ├── assets/
+│   │   │   ├── data.json
+│   │   │   ├── images/
+├── package.json
+├── package-lock.json
+├── angular.json
+├── tsconfig.app.json
+├── tsconfig.json
+├── .gitignore
+├── README.md
 ```
 
-## Running the Backend (if applicable)
+## Installation and Setup
+
+### Backend
 ```sh
 cd backend
 npm install
-npm start
+node server.js
 ```
+The API will run on `http://localhost:5500`
 
-## Accessing the Dashboard
-- Open `http://localhost:4200` in your browser.
-- If running on a phone, ensure the computer and phone are on the same network and use `http://<your-local-ip>:4200`.
-
-## Deployment
-- Build for production:
+### Frontend
 ```sh
-ng build --configuration=production
+cd frontend
+npm install
+ng serve --open
 ```
-- Deploy using your preferred hosting service (Netlify, Vercel, Firebase, etc.).
+The application will run on `http://localhost:4200`
 
-## License
-This project is licensed under the MIT License.
 
-## Author
-Created by **Stanislav Křikava** 
+## Frontend Application
+The application consists of multiple components:
+- **DashboardComponent** - Main component
+- **TableComponent** - Appointment table
+- **ChartComponent** - Donut Chart
+- **DateComponent** - Date-related functionalities
+- **LineChartComponent** - Line chart
+- **UserFormComponent** - User form
+- **UserListComponent** - User list 
+
+## Functionality
+- Displaying a list of users
+- Adding, updating, and deleting users
+- Interactive dashboard with charts
+- Real-time data updates
+- Calling users
+
+## Styling
+Using pure CSS, with the possibility of extending it using Tailwind or SCSS for better scalability.
+
+## Database
+Currently using a JSON file (`database.json`), with an option to migrate to MongoDB for better scalability.
+
+## Potential Enhancements
+- Implement authentication (JWT)
+- Switch to MongoDB
+- Improve UI/UX with Material Design or Tailwind CSS
+- Implement WebSockets for better real-time updates
+
+---
+
+This README provides a clear and structured documentation for developers looking to understand and extend the project. 
 

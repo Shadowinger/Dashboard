@@ -16,6 +16,8 @@ app-table{
     width: 37.2vw;
     height: 60vh;
     background-color: var(--bg-primary);
+    max-height: none;
+    max-width: none;
     display: flex;
     justify-content: center;
     align-items: center;

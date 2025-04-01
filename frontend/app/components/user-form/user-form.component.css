@@ -20,13 +20,14 @@
     align-items: center;
     background-color: #222;
     color: white;
-    padding:2.5vh;
-    
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+    padding-right: 1vw;
+    padding-left: 1vw;    
     border-radius: 0.6vw;
     width: 13vw;
     height: 25vh;
-    max-width: 30vw;
-    min-height: 150px;
+
 }
 
 .text-checkup {
@@ -66,7 +67,7 @@
 }
 
 .yellow, .pink, .blue {
-    font-size: 1.5rem;
+    font-size: 1.3vw;
     font-weight: bold;
     margin-left: auto;
 }
@@ -80,6 +81,10 @@
         margin-bottom: 10px;
         font-size: 24px;
         top:110px
+    }
+    .yellow, .pink, .blue {
+        font-size: 5.3vw;
+
     }
     .container-activities {
         max-width: 81vw;
